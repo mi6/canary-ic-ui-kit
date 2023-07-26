@@ -1,0 +1,162 @@
+ic-input-component-container {
+  /**
+   * @prop --border-color: Border colour of the input component container
+   */
+
+  display: flex;
+  border: var(--ic-space-1px) solid
+    var(--border-color, var(--ic-architectural-400));
+  border-radius: var(--ic-border-radius);
+  transition: var(--ic-easing-transition-slow);
+  height: 2.5rem;
+  width: var(--input-width, 20rem);
+  padding: var(--ic-space-1px);
+  background-color: var(--ic-architectural-white);
+  box-sizing: border-box;
+  fill: var(--ic-architectural-400);
+  outline: none;
+}
+
+ic-input-component-container.fullwidth {
+  width: 100%;
+}
+
+ic-input-component-container.disabled,
+ic-input-component-container.disabled:hover {
+  border: var(--ic-space-1px) dashed var(--ic-architectural-200);
+}
+
+ic-input-component-container.readonly,
+ic-input-component-container.readonly:hover {
+  border: none;
+  padding: 0;
+}
+
+ic-input-component-container.error {
+  border: var(--ic-error-border-default);
+  padding: 0;
+}
+
+ic-input-component-container.error:hover {
+  border: var(--ic-error-border-hover);
+}
+
+ic-input-component-container.error:focus-within {
+  border: var(--ic-error-border-pressed);
+}
+
+ic-input-component-container.warning {
+  border: var(--ic-warning-border-default);
+  padding: 0;
+}
+
+ic-input-component-container.warning:hover {
+  border: var(--ic-warning-border-hover);
+}
+
+ic-input-component-container.warning:focus-within {
+  border: var(--ic-warning-border-pressed);
+}
+
+ic-input-component-container.success {
+  border: var(--ic-success-border-default);
+  padding: 0;
+}
+
+ic-input-component-container.success:hover {
+  border: var(--ic-success-border-hover);
+}
+
+ic-input-component-container.success:focus-within {
+  border: var(--ic-success-border-pressed);
+}
+
+ic-input-component-container.small {
+  height: var(--ic-space-xl);
+}
+
+ic-input-component-container.multiline {
+  height: auto;
+}
+
+ic-input-component-container .icon-container {
+  margin-top: var(--ic-space-xxs);
+  margin-left: 0.438rem;
+  display: flex;
+  align-items: center;
+}
+
+ic-input-component-container.multiline .icon-container,
+ic-input-component-container.multiline.small .icon-container {
+  margin-top: 0.375rem;
+  display: block;
+}
+
+ic-input-component-container.readonly .icon-container {
+  margin-left: -0.313rem;
+}
+
+ic-input-component-container.disabled ::placeholder {
+  display: none;
+}
+
+ic-input-component-container .inline-success {
+  margin: var(--ic-space-xs) 0.375rem;
+  display: flex;
+  align-items: center;
+}
+
+ic-input-component-container.dark:hover {
+  --border-color: var(--ic-architectural-400);
+}
+
+ic-input-component-container .inline-success > svg {
+  fill: var(--ic-status-success);
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+ic-input-component-container:hover {
+  border: var(--ic-border-hover);
+  color: var(--ic-action-dark-hover);
+}
+
+ic-input-component-container:focus {
+  border: var(--ic-border-pressed);
+}
+
+.focus-indicator {
+  display: flex;
+  width: 100%;
+  margin: -0.125rem;
+  padding: 0.125rem;
+  border-radius: var(--ic-border-radius);
+  transition: var(--ic-easing-transition-fast);
+}
+
+.focus-indicator:focus-within,
+.focus-indicator-enabled {
+  box-shadow: var(--ic-border-focus);
+}
+
+.focus-indicator.dark:focus-within {
+  box-shadow: var(--ic-border-focus);
+}
+
+@media (forced-colors: active) {
+  /* Styles here only apply to Forced Colors Mode */
+  ic-input-component-container,
+  .focus-indicator {
+    transition: none;
+  }
+
+  ic-input-component-container:focus-within {
+    border: var(--ic-space-1px) solid Highlight;
+    outline: 0.125rem solid Highlight;
+  }
+
+  ic-input-component-container.disabled,
+  ic-input-component-container.disabled:hover {
+    border: var(--ic-space-1px) dashed GrayText;
+  }
+}

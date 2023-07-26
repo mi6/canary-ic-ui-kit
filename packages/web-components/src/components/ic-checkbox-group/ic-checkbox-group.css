@@ -1,0 +1,41 @@
+@import "../../global/normalize.css";
+
+:host {
+  display: block;
+}
+
+ic-input-label.error {
+  color: var(--ic-status-error);
+}
+
+ic-input-label ic-typography {
+  margin-bottom: var(--ic-space-sm);
+}
+
+:host(.small) ic-input-label ic-typography {
+  margin-bottom: calc(var(--ic-space-sm) / 2);
+}
+
+ic-input-validation {
+  margin-top: var(--ic-space-sm);
+}
+
+:host(.small) ic-input-validation {
+  margin-top: calc(var(--ic-space-sm) / 2);
+}
+
+.checkboxes-container {
+  margin-bottom: calc(-1 * var(--ic-space-xxs));
+}
+
+:host(.small) .checkboxes-container {
+  margin-bottom: calc(-1 * var(--ic-space-xxxs));
+}
+
+.screen-reader-only-text {
+  position: absolute;
+  left: -9999px;
+  background-color: #fff;
+  color: #000;
+  text-transform: none;
+}

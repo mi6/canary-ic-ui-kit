@@ -1,0 +1,154 @@
+@import "../../global/normalize.css";
+
+:host {
+  display: inline-block;
+}
+
+.chip {
+  display: flex;
+  padding: var(--ic-space-xxs);
+  font-size: 0.875rem;
+  border-radius: var(--ic-space-md);
+  text-align: left;
+  text-decoration: none;
+  transition: var(--ic-easing-transition-fast);
+  position: relative;
+}
+
+.chip.small {
+  padding: var(--ic-space-xxxs);
+  border-radius: calc(var(--ic-space-md) - var(--ic-space-xxxs));
+}
+
+.chip.large {
+  padding: var(--ic-space-xs);
+  border-radius: calc(var(--ic-space-md) + var(--ic-space-xxs));
+}
+
+.label {
+  padding: 0 var(--ic-space-xs);
+}
+
+.chip.hovered:not(:focus-within) {
+  background-color: var(--ic-architectural-300);
+}
+
+.chip:focus-within {
+  box-shadow: var(--ic-border-focus);
+  outline: var(--ic-hc-focus-outline);
+  z-index: 1;
+}
+
+.chip.outline.hovered:not(:focus-within) {
+  background-color: var(--ic-action-dark-bg-hover);
+}
+
+ic-tooltip:focus-within {
+  z-index: 1;
+}
+
+.filled {
+  background-color: var(--ic-architectural-200);
+  color: black;
+  border: none;
+}
+
+.filled.disabled {
+  background-color: var(--ic-architectural-100);
+}
+
+.outline {
+  color: var(--ic-architectural-900);
+  border: var(--ic-space-1px) solid var(--ic-architectural-900);
+  padding: calc(var(--ic-space-xxs) - var(--ic-space-1px));
+}
+
+.outline.small {
+  padding: calc(var(--ic-space-xxxs) - var(--ic-space-1px));
+}
+
+.outline.large {
+  padding: calc(var(--ic-space-xs) - var(--ic-space-1px));
+}
+
+.outline.disabled {
+  border: var(--ic-border-disabled);
+  background: none;
+}
+
+.chip.disabled ic-typography {
+  color: var(--ic-architectural-200);
+}
+
+.dismiss-icon {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  margin: var(--ic-space-xxxs);
+  height: calc(var(--ic-space-lg) - var(--ic-space-xxs));
+  width: calc(var(--ic-space-lg) - var(--ic-space-xxs));
+}
+
+.dismiss-icon:focus {
+  outline: var(--ic-hc-focus-outline);
+}
+
+.dismiss-icon[disabled] {
+  pointer-events: none;
+  color: var(--ic-architectural-200);
+}
+
+.icon {
+  padding: var(--ic-space-xxxs);
+  box-sizing: border-box;
+}
+
+.icon,
+ic-tooltip {
+  width: var(--ic-space-lg);
+  height: var(--ic-space-lg);
+}
+
+.chip.disabled path,
+.chip.disabled ::slotted(svg) {
+  fill: var(--ic-architectural-200);
+}
+
+@media (forced-colors: active) {
+  .chip {
+    border: var(--ic-hc-border);
+  }
+
+  .filled.small {
+    padding: calc(var(--ic-space-xxxs) - var(--ic-space-1px));
+  }
+
+  .filled {
+    padding: calc(var(--ic-space-xxxs) + var(--ic-space-1px));
+  }
+
+  .filled.large {
+    padding: calc(var(--ic-space-xs) - var(--ic-space-1px));
+  }
+
+  .chip.disabled {
+    appearance: none;
+    border-color: GrayText;
+  }
+
+  .chip.disabled ic-typography {
+    color: GrayText;
+  }
+
+  .chip.disabled path,
+  .chip.disabled ::slotted(svg) {
+    fill: GrayText;
+  }
+
+  .chip:focus-within {
+    outline: none;
+    border-color: Highlight;
+  }
+}

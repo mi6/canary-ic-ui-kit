@@ -1,0 +1,166 @@
+@import "../../global/normalize.css";
+
+:host {
+  display: block;
+  position: relative;
+}
+
+:host(.ic-typography-vertical-margins-h1) {
+  margin: 0 0 var(--ic-space-xl);
+}
+
+:host(.ic-typography-vertical-margins-h2) {
+  margin: var(--ic-space-xxl) 0 var(--ic-space-lg);
+}
+
+:host(.ic-typography-vertical-margins-h3) {
+  margin: var(--ic-space-xl) 0 var(--ic-space-md);
+}
+
+:host(.ic-typography-vertical-margins-h4) {
+  margin: var(--ic-space-lg) 0 var(--ic-space-md);
+}
+
+:host(.ic-typography-vertical-margins-subtitle-large),
+:host(.ic-typography-vertical-margins-subtitle-small),
+:host(.ic-typography-vertical-margins-body),
+:host(.ic-typography-vertical-margins-code-large),
+:host(.ic-typography-vertical-margins-code-small),
+:host(.ic-typography-vertical-margins-code-extra-small) {
+  margin: 0 0 var(--ic-space-md);
+}
+
+:host(.ic-typography-vertical-margins-caption),
+:host(.ic-typography-vertical-margins-caption-uppercase) {
+  margin: 0 0 var(--ic-space-xs);
+}
+
+:host(.ic-typography-vertical-margins-h2:first-child),
+:host(.ic-typography-vertical-margins-h3:first-child),
+:host(.ic-typography-vertical-margins-h4:first-child) {
+  margin-top: 0;
+}
+
+:host(.ic-typography-h1) {
+  font: var(--ic-font-h1);
+}
+
+:host(.ic-typography-h2) {
+  font: var(--ic-font-h2);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0025);
+}
+
+:host(.ic-typography-h3) {
+  font: var(--ic-font-h3);
+}
+
+:host(.ic-typography-h4) {
+  font: var(--ic-font-h4);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0015);
+}
+
+:host(.ic-typography-subtitle-large) {
+  font: var(--ic-font-subtitle-large);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0015);
+}
+
+:host(.ic-typography-subtitle-small) {
+  font: var(--ic-font-subtitle-small);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0015);
+}
+
+:host(.ic-typography-body) {
+  font: var(--ic-font-body);
+  letter-spacing: var(--ic-font-letter-spacing-0pt005);
+}
+
+:host(.ic-typography-caption) {
+  font: var(--ic-font-caption);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0025);
+}
+
+:host(.ic-typography-caption-uppercase) {
+  font: var(--ic-font-caption);
+  letter-spacing: var(--ic-font-letter-spacing-0pt0025);
+  text-transform: uppercase;
+}
+
+:host(.ic-typography-label) {
+  font: var(--ic-font-label);
+  letter-spacing: var(--ic-font-letter-spacing-0pt025);
+}
+
+:host(.ic-typography-label-uppercase) {
+  font: var(--ic-font-label);
+  letter-spacing: var(--ic-font-letter-spacing-0pt025);
+  text-transform: uppercase;
+}
+
+:host(.ic-typography-code-large) {
+  font: var(--ic-font-code-large);
+  letter-spacing: var(--ic-font-letter-spacing-0pt025);
+}
+
+:host(.ic-typography-code-small) {
+  font: var(--ic-font-code-small);
+  letter-spacing: var(--ic-font-letter-spacing-0pt005);
+}
+
+:host(.ic-typography-code-extra-small) {
+  font: var(--ic-font-code-extra-small);
+  letter-spacing: var(--ic-font-letter-spacing-0pt025);
+}
+
+:host(.ic-typography-no-wrap) {
+  white-space: nowrap;
+}
+
+:host ::slotted(h1),
+:host ::slotted(h2),
+:host ::slotted(h3),
+:host ::slotted(h4),
+:host ::slotted(h5),
+:host ::slotted(h6),
+:host ::slotted(p),
+:host ::slotted(label) {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.trunc-wrapper {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: var(--truncation-max-lines, initial);
+  -webkit-line-clamp: var(--truncation-max-lines, initial);
+  overflow: hidden;
+}
+
+.trunc-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--ic-color-primary-text);
+  text-decoration: underline;
+  font-weight: var(--ic-font-weight-bold);
+  transition: var(--ic-easing-transition-fast);
+}
+
+.trunc-btn:hover,
+.trunc-btn.focus {
+  outline: none;
+  border-bottom: var(--ic-space-xxs) solid !important;
+  margin-bottom: calc(-1 * var(--ic-space-xxs)) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@supports (text-decoration-thickness: 25%) {
+  .trunc-btn:hover,
+  .trunc-btn.focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 25%;
+    text-underline-offset: 25%;
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

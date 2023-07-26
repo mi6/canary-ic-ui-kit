@@ -1,0 +1,25 @@
+:host {
+  --border-bottom-color: var(--ic-architectural-300);
+
+  display: block;
+  margin-bottom: var(--ic-space-md);
+  border-bottom: var(--ic-border-default);
+}
+
+:host(.inline) {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.light {
+  border-bottom: var(--ic-space-1px) solid var(--ic-architectural-white);
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}

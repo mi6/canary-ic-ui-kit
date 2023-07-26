@@ -1,0 +1,119 @@
+@import "../../global/normalize.css";
+
+/**
+ * @prop --ic-z-index-menu: z-index of search bar menu
+ */
+
+:host(.search) {
+  --divider-height: 1.5rem;
+}
+
+:host(.search.small) {
+  --divider-height: 1rem;
+}
+
+:host(.fullwidth) {
+  width: 100%;
+}
+
+:host(.search) .disabled:hover {
+  border-color: var(--ic-architectural-200);
+}
+
+:host(.search.disabled) .disabled svg {
+  color: var(--ic-architectural-200);
+}
+
+:host(.search) .disabled svg {
+  color: var(--ic-architectural-400);
+}
+
+/* CLEAR */
+
+.clear-button-container {
+  align-items: center;
+  margin-right: var(--ic-space-1px);
+  display: none;
+  visibility: hidden;
+}
+
+.clear-button {
+  border-radius: var(--ic-border-radius);
+  transition: box-shadow var(--ic-easing-transition),
+    border-radius var(--ic-easing-transition);
+}
+
+.clear-button:focus,
+.clear-button:active {
+  background-color: var(--ic-focus-blue);
+  box-shadow: inset 0 0 0 0.125rem var(--ic-focus-glow);
+  border-radius: 0.25rem;
+}
+
+.clear-button:focus,
+.clear-button:active * {
+  fill: white;
+}
+
+.clear-button-visible {
+  visibility: visible;
+  display: flex;
+}
+
+.search-submit-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-submit-button-disabled .ic-tooltip-container {
+  display: none !important;
+}
+
+.search-submit-button:focus,
+.search-submit-button:active {
+  background-color: var(--ic-focus-blue) !important;
+  box-shadow: inset 0 0 0 0.125rem var(--ic-focus-glow) !important;
+  border-radius: var(--ic-space-xxs);
+}
+
+.search-submit-button:focus,
+.search-submit-button:active * {
+  fill: white;
+}
+
+.divider {
+  width: var(--ic-space-1px);
+  background-color: var(--ic-action-dark-active);
+  height: var(--divider-height);
+}
+
+:host(.dark) .divider {
+  background-color: var(--ic-architectural-200);
+}
+
+.menu-container {
+  width: var(--input-width, 20rem);
+  position: relative;
+  top: var(--ic-space-xxxs);
+}
+
+.menu-container.fullwidth {
+  width: 100%;
+}
+
+.no-results {
+  cursor: not-allowed;
+}
+
+.search-results-status {
+  border: 0;
+  clip: rect(0, 0, 0, 0, 0);
+  height: var(--ic-space-1px);
+  margin-bottom: calc(-1 * var(--ic-space-1px));
+  margin-right: calc(-1 * var(--ic-space-1px));
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: var(--ic-space-1px);
+}

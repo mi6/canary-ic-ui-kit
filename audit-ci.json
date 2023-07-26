@@ -1,0 +1,12 @@
+{
+  "allowlist": [
+    "GHSA-7p7h-4mm5-852v",
+    "GHSA-ww39-953v-wcq6",
+    "GHSA-pfrx-2q88-qq97",
+    "GHSA-w5p7-h5w8-2hfq",
+    "GHSA-h9rv-jmmf-4pgx",
+    "GHSA-hxcc-f52p-wc94",
+    "GHSA-c2qf-rxjj-qqgw",
+    "GHSA-j8xg-fqg3-53r7"
+  ]
+}

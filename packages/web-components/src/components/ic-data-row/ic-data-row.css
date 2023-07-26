@@ -1,0 +1,83 @@
+@import "../../global/normalize.css";
+
+:host {
+  position: relative;
+  display: block;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+}
+
+.text-cells {
+  display: flex;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.label {
+  width: 12.5rem;
+  min-width: 12.5rem;
+  margin-right: var(--ic-space-md);
+  color: var(--ic-color-tertiary-text);
+}
+
+.value {
+  flex-grow: 1;
+}
+
+slot[name="value"]::slotted(ic-text-field[readonly][hide-label]) {
+  margin-top: calc(var(--ic-space-xs) * -1);
+}
+
+slot[name="value"]::slotted(ic-text-field[small][readonly][hide-label]) {
+  margin-top: calc(var(--ic-space-xxs) * -1);
+}
+
+slot[name="value"]::slotted(ic-text-field[readonly][hide-label][rows]) {
+  margin-top: calc(var(--ic-space-xxs) * -1 - var(--ic-space-xxxs));
+}
+
+.end-component {
+  width: fit-content;
+  margin-left: 3.5rem;
+}
+
+.divider {
+  margin-top: var(--ic-space-md);
+  height: var(--ic-space-1px);
+  background-color: var(--ic-architectural-300);
+}
+
+:host(.small) .divider {
+  margin-top: var(--ic-space-xs);
+}
+
+:host(.breakpoint-medium) .label {
+  width: 10rem;
+  min-width: 10rem;
+}
+
+:host(.breakpoint-xs) .text-cells {
+  flex-direction: column;
+}
+
+:host(.breakpoint-xs) .label {
+  width: 8rem;
+  margin-bottom: var(--ic-space-xs);
+}
+
+:host(.breakpoint-xs) .value {
+  max-width: 95%;
+}
+
+:host(.breakpoint-xs) .end-component {
+  margin-left: 0;
+}
+
+@media (forced-colors: active) {
+  .divider {
+    background-color: canvastext;
+  }
+}
