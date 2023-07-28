@@ -28,6 +28,8 @@ import { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 import { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 import { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 import { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
+import { IcDateFormat, IcDisabledDateTypes } from "./components/ic-date-input/ic-date-input.types";
+import { IcInformationStatusOrEmpty as IcInformationStatusOrEmpty1 } from "./interface";
 export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
 export { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 export { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
@@ -51,6 +53,8 @@ export { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 export { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 export { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 export { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
+export { IcDateFormat, IcDisabledDateTypes } from "./components/ic-date-input/ic-date-input.types";
+export { IcInformationStatusOrEmpty as IcInformationStatusOrEmpty1 } from "./interface";
 export namespace Components {
     interface IcAlert {
         /**
@@ -1889,6 +1893,65 @@ export namespace Components {
          */
         "variant"?: IcTypographyVariants;
     }
+    interface IcUnstableDateInput {
+        /**
+          * The format in which the date will be displayed.
+         */
+        "dateFormat"?: IcDateFormat;
+        /**
+          * The text to display as the validation message when `disabledDates` is `from-now` and a disabled date is entered.
+         */
+        "dateFromNowMessage"?: string;
+        /**
+          * The text to display as the validation message when `disabledDates` is `until-now` and a disabled date is entered.
+         */
+        "dateUntilNowMessage"?: string;
+        /**
+          * If `true`, the disabled state will be set.
+         */
+        "disabled"?: boolean;
+        /**
+          * The dates (until now or from now) that the user cannot select. A validation message will appear if they enter a disabled date.
+         */
+        "disabledDates"?: IcDisabledDateTypes;
+        /**
+          * Returns the value as a Date object
+          * @returns Date
+         */
+        "getDate": () => Promise<Date>;
+        /**
+          * The helper text that will be displayed for additional field guidance. This will default to the `dateFormat` value.
+         */
+        "helperText"?: string;
+        /**
+          * The ID for the input.
+         */
+        "inputId"?: string;
+        /**
+          * The label for the date input.
+         */
+        "label": string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * If `true`, the input will require a value.
+         */
+        "required"?: boolean;
+        /**
+          * The validation status - e.g. 'error' | 'warning' | 'success'. This will override the built-in date validation.
+         */
+        "validationStatus"?: IcInformationStatusOrEmpty1;
+        /**
+          * The text to display as the validation message. This will override the built-in date validation.
+         */
+        "validationText"?: string;
+        /**
+          * The value of the date input - in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date;
+    }
 }
 export interface IcAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1989,6 +2052,10 @@ export interface IcToastCustomEvent<T> extends CustomEvent<T> {
 export interface IcTopNavigationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIcTopNavigationElement;
+}
+export interface IcUnstableDateInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIcUnstableDateInputElement;
 }
 declare global {
     interface HTMLIcAlertElement extends Components.IcAlert, HTMLStencilElement {
@@ -2339,6 +2406,12 @@ declare global {
         prototype: HTMLIcTypographyElement;
         new (): HTMLIcTypographyElement;
     };
+    interface HTMLIcUnstableDateInputElement extends Components.IcUnstableDateInput, HTMLStencilElement {
+    }
+    var HTMLIcUnstableDateInputElement: {
+        prototype: HTMLIcUnstableDateInputElement;
+        new (): HTMLIcUnstableDateInputElement;
+    };
     interface HTMLElementTagNameMap {
         "ic-alert": HTMLIcAlertElement;
         "ic-back-to-top": HTMLIcBackToTopElement;
@@ -2398,6 +2471,7 @@ declare global {
         "ic-tooltip": HTMLIcTooltipElement;
         "ic-top-navigation": HTMLIcTopNavigationElement;
         "ic-typography": HTMLIcTypographyElement;
+        "ic-unstable-date-input": HTMLIcUnstableDateInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -4350,6 +4424,72 @@ declare namespace LocalJSX {
          */
         "variant"?: IcTypographyVariants;
     }
+    interface IcUnstableDateInput {
+        /**
+          * The format in which the date will be displayed.
+         */
+        "dateFormat"?: IcDateFormat;
+        /**
+          * The text to display as the validation message when `disabledDates` is `from-now` and a disabled date is entered.
+         */
+        "dateFromNowMessage"?: string;
+        /**
+          * The text to display as the validation message when `disabledDates` is `until-now` and a disabled date is entered.
+         */
+        "dateUntilNowMessage"?: string;
+        /**
+          * If `true`, the disabled state will be set.
+         */
+        "disabled"?: boolean;
+        /**
+          * The dates (until now or from now) that the user cannot select. A validation message will appear if they enter a disabled date.
+         */
+        "disabledDates"?: IcDisabledDateTypes;
+        /**
+          * The helper text that will be displayed for additional field guidance. This will default to the `dateFormat` value.
+         */
+        "helperText"?: string;
+        /**
+          * The ID for the input.
+         */
+        "inputId"?: string;
+        /**
+          * The label for the date input.
+         */
+        "label": string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onIcBlur"?: (event: IcUnstableDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onIcChange"?: (event: IcUnstableDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * Emitted when the input gains focus.
+         */
+        "onIcFocus"?: (event: IcUnstableDateInputCustomEvent<{ value: Date }>) => void;
+        /**
+          * If `true`, the input will require a value.
+         */
+        "required"?: boolean;
+        /**
+          * The validation status - e.g. 'error' | 'warning' | 'success'. This will override the built-in date validation.
+         */
+        "validationStatus"?: IcInformationStatusOrEmpty1;
+        /**
+          * The text to display as the validation message. This will override the built-in date validation.
+         */
+        "validationText"?: string;
+        /**
+          * The value of the date input - in ISO 8601 date string format (`yyyy-mm-dd`) or as a JavaScript `Date` object.
+         */
+        "value"?: string | Date;
+    }
     interface IntrinsicElements {
         "ic-alert": IcAlert;
         "ic-back-to-top": IcBackToTop;
@@ -4409,6 +4549,7 @@ declare namespace LocalJSX {
         "ic-tooltip": IcTooltip;
         "ic-top-navigation": IcTopNavigation;
         "ic-typography": IcTypography;
+        "ic-unstable-date-input": IcUnstableDateInput;
     }
 }
 export { LocalJSX as JSX };
@@ -4473,6 +4614,7 @@ declare module "@stencil/core" {
             "ic-tooltip": LocalJSX.IcTooltip & JSXBase.HTMLAttributes<HTMLIcTooltipElement>;
             "ic-top-navigation": LocalJSX.IcTopNavigation & JSXBase.HTMLAttributes<HTMLIcTopNavigationElement>;
             "ic-typography": LocalJSX.IcTypography & JSXBase.HTMLAttributes<HTMLIcTypographyElement>;
+            "ic-unstable-date-input": LocalJSX.IcUnstableDateInput & JSXBase.HTMLAttributes<HTMLIcUnstableDateInputElement>;
         }
     }
 }
