@@ -14,11 +14,11 @@ import {
 import {
   getThemeFromContext,
   inheritAttributes,
+  isSlotUsed,
   removeDisabledFalse,
 } from "../../utils/helpers";
 import { IC_INHERITED_ARIA } from "../../utils/constants";
 import {
-  IcButtonSizes,
   IcButtonTypes,
   IcButtonVariants,
   IcButtonTooltipPlacement,
@@ -27,6 +27,7 @@ import {
   IcTheme,
   IcThemeForeground,
   IcThemeForegroundEnum,
+  IcSizes,
 } from "../../utils/types";
 
 let buttonIds = 0;
@@ -139,7 +140,7 @@ export class Button {
   /**
    * The size of the button to be displayed.
    */
-  @Prop() size?: IcButtonSizes = "default";
+  @Prop() size?: IcSizes = "default";
 
   /**
    * The place to display the linked URL, as the name for a browsing context (a tab, window, or iframe).
@@ -250,6 +251,8 @@ export class Button {
   async updateAriaLabel(newValue: string): Promise<void> {
     if (this.hasTooltip) {
       this.tooltipEl.label = newValue;
+      this.buttonEl.setAttribute("aria-label", null);
+    } else {
       this.buttonEl.setAttribute("aria-label", newValue);
     }
   }
@@ -364,7 +367,7 @@ export class Button {
           onBlur={this.onBlur}
           ref={(el) => (this.buttonEl = el)}
           id={buttonId}
-          aria-describedby={describedBy}
+          aria-describedby={this.hasTooltip && ariaLabel ? null : describedBy}
           part="button"
         >
           {this.hasIconSlot() && !this.loading && (
@@ -404,6 +407,7 @@ export class Button {
           ["dark"]: this.appearance === IcThemeForegroundEnum.Dark,
           ["light"]: this.appearance === IcThemeForegroundEnum.Light,
           ["full-width"]: this.fullWidth,
+          ["with-badge"]: isSlotUsed(this.el, "badge"),
         }}
         onClick={this.handleClick}
       >
