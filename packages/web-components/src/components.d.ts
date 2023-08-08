@@ -5,21 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
-import { IcButtonSizes, IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
+import { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+import { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 import { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
-import { IcChipAppearance, IcChipSizes } from "./components/ic-chip/ic-chip.types";
+import { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 import { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
 import { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 import { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
 import { IcAriaLiveModeVariants } from "./components/ic-input-validation/ic-input-validation.types";
 import { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicator/ic-loading-indicator.types";
+import { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 import { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 import { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
 import { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 import { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 import { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
-import { IcSearchBarBlurEventDetail } from "./components/ic-search-bar/ic-search-bar.types";
 import { IcSkeletonVariants } from "./components/ic-skeleton/ic-skeleton.types";
 import { IcStatusTagAppearance, IcStatusTagStatuses } from "./components/ic-status-tag/ic-status-tag.types";
 import { IcStepStatuses, IcStepTypes, IcStepVariants } from "./components/ic-step/ic-step.types";
@@ -28,21 +28,21 @@ import { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 import { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 import { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 import { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
-export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
-export { IcButtonSizes, IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
+export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
+export { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 export { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
-export { IcChipAppearance, IcChipSizes } from "./components/ic-chip/ic-chip.types";
+export { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 export { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
 export { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 export { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
 export { IcAriaLiveModeVariants } from "./components/ic-input-validation/ic-input-validation.types";
 export { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicator/ic-loading-indicator.types";
+export { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 export { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 export { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
 export { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 export { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 export { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
-export { IcSearchBarBlurEventDetail } from "./components/ic-search-bar/ic-search-bar.types";
 export { IcSkeletonVariants } from "./components/ic-skeleton/ic-skeleton.types";
 export { IcStatusTagAppearance, IcStatusTagStatuses } from "./components/ic-status-tag/ic-status-tag.types";
 export { IcStepStatuses, IcStepTypes, IcStepVariants } from "./components/ic-step/ic-step.types";
@@ -185,7 +185,7 @@ export namespace Components {
         /**
           * The size of the button to be displayed.
          */
-        "size"?: IcButtonSizes;
+        "size"?: IcSizes;
         /**
           * The place to display the linked URL, as the name for a browsing context (a tab, window, or iframe).
          */
@@ -296,7 +296,11 @@ export namespace Components {
          */
         "setFocus": () => Promise<void>;
         /**
-          * If true, the small styling will be applied to the checkbox.
+          * The size of the checkbox to be displayed. This does not affect the font size of the label. If a checkbox is contained in a checkbox group, this will override the size set on checkbox group.
+         */
+        "size"?: IcSizes;
+        /**
+          * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
         "small"?: boolean;
         /**
@@ -330,7 +334,11 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * If `true`, the small styling will be applied to the checkbox group.
+          * The size of the checkboxes to be displayed. This does not affect the font size of the label.
+         */
+        "size"?: IcSizes;
+        /**
+          * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
         "small": boolean;
         /**
@@ -366,7 +374,7 @@ export namespace Components {
         /**
           * The size of the chip.
          */
-        "size"?: IcChipSizes;
+        "size"?: IcSizes;
     }
     interface IcClassificationBanner {
         /**
@@ -805,6 +813,10 @@ export namespace Components {
         "options": IcMenuOption[];
         "parentEl"?: HTMLElement;
         /**
+          * Specify the mode search bar uses to search. `navigation` allows for quick lookups of a set of values, `query` allows for more general searches.
+         */
+        "searchMode"?: IcSearchBarSearchModes;
+        /**
           * If `true`, the small styling will be applied to the menu.
          */
         "small"?: boolean;
@@ -1199,7 +1211,7 @@ export namespace Components {
          */
         "autofocus": boolean;
         /**
-          * The number of characters until suggestions appear.
+          * The number of characters until suggestions appear. The submit button will be disabled until the inputted value is equal to or greater than this number.
          */
         "charactersUntilSuggestion": number;
         /**
@@ -1274,6 +1286,10 @@ export namespace Components {
           * If `true`, the search bar will require a value.
          */
         "required"?: boolean;
+        /**
+          * Specify the mode search bar uses to search. `navigation` allows for quick lookups of a set of values, `query` allows for more general searches.
+         */
+        "searchMode"?: IcSearchBarSearchModes;
         /**
           * Sets focus on the native `input`.
          */
@@ -2526,7 +2542,7 @@ declare namespace LocalJSX {
         /**
           * The size of the button to be displayed.
          */
-        "size"?: IcButtonSizes;
+        "size"?: IcSizes;
         /**
           * The place to display the linked URL, as the name for a browsing context (a tab, window, or iframe).
          */
@@ -2636,7 +2652,11 @@ declare namespace LocalJSX {
          */
         "onIcCheck"?: (event: IcCheckboxCustomEvent<void>) => void;
         /**
-          * If true, the small styling will be applied to the checkbox.
+          * The size of the checkbox to be displayed. This does not affect the font size of the label. If a checkbox is contained in a checkbox group, this will override the size set on checkbox group.
+         */
+        "size"?: IcSizes;
+        /**
+          * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
         "small"?: boolean;
         /**
@@ -2674,7 +2694,11 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * If `true`, the small styling will be applied to the checkbox group.
+          * The size of the checkboxes to be displayed. This does not affect the font size of the label.
+         */
+        "size"?: IcSizes;
+        /**
+          * @deprecated This prop should not be used anymore. Set prop `size` to "small" instead.
          */
         "small"?: boolean;
         /**
@@ -2714,7 +2738,7 @@ declare namespace LocalJSX {
         /**
           * The size of the chip.
          */
-        "size"?: IcChipSizes;
+        "size"?: IcSizes;
     }
     interface IcClassificationBanner {
         /**
@@ -3150,6 +3174,10 @@ declare namespace LocalJSX {
         "options": IcMenuOption[];
         "parentEl"?: HTMLElement;
         /**
+          * Specify the mode search bar uses to search. `navigation` allows for quick lookups of a set of values, `query` allows for more general searches.
+         */
+        "searchMode"?: IcSearchBarSearchModes;
+        /**
           * If `true`, the small styling will be applied to the menu.
          */
         "small"?: boolean;
@@ -3552,7 +3580,7 @@ declare namespace LocalJSX {
          */
         "autofocus"?: boolean;
         /**
-          * The number of characters until suggestions appear.
+          * The number of characters until suggestions appear. The submit button will be disabled until the inputted value is equal to or greater than this number.
          */
         "charactersUntilSuggestion"?: number;
         /**
@@ -3673,6 +3701,10 @@ declare namespace LocalJSX {
           * If `true`, the search bar will require a value.
          */
         "required"?: boolean;
+        /**
+          * Specify the mode search bar uses to search. `navigation` allows for quick lookups of a set of values, `query` allows for more general searches.
+         */
+        "searchMode"?: IcSearchBarSearchModes;
         /**
           * If `true`, the small styling will be applied to the search bar.
          */
@@ -4008,6 +4040,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "onTabClick"?: (event: IcTabCustomEvent<IcTabClickEventDetail>) => void;
         "onTabCreated"?: (event: IcTabCustomEvent<HTMLIcTabElement>) => void;
+        "onTabEnabled"?: (event: IcTabCustomEvent<void>) => void;
         "onTabFocus"?: (event: IcTabCustomEvent<IcTabClickEventDetail>) => void;
         "onTabRemoved"?: (event: IcTabCustomEvent<void>) => void;
         "selected"?: boolean;
