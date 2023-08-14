@@ -15,7 +15,7 @@ import {
 } from "../ic-pagination/ic-pagination.types";
 
 @Component({
-  tag: "ic-data-table",
+  tag: "ic-unstable-data-table",
   styleUrl: "ic-data-table.css",
   shadow: true,
 })
@@ -26,7 +26,7 @@ export class DataTable {
     descending: descendingIcon,
   };
 
-  @Element() el: HTMLIcDataTableElement;
+  @Element() el: HTMLIcUnstableDataTableElement;
 
   @State() fromRow: number = 0;
 

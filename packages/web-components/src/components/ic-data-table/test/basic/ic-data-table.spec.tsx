@@ -288,11 +288,11 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={data}
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -303,11 +303,11 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columnsWithRowHeader}
           data={dataWithRowHeaders}
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -318,12 +318,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={data}
           embedded
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -334,12 +334,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={data}
           sortable
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -350,12 +350,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={longData}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -366,12 +366,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columnsWithOverrides}
           data={data}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -382,12 +382,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columnsWithRowHeader}
           data={dataWithRowOverrides}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -398,12 +398,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={dataWithCellOverrides}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -414,12 +414,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={dataWithCellOverrides}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -476,12 +476,12 @@ describe(icDataTable, () => {
         PaginationItem,
       ],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={longData}
           show-pagination
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -529,7 +529,7 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [DataTable, PaginationBar],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={longData}
@@ -542,7 +542,7 @@ describe(icDataTable, () => {
             ],
             type: "data",
           }}
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -604,12 +604,12 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [Button, DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={dataWithObjects}
           sortable
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 
@@ -644,11 +644,11 @@ describe(icDataTable, () => {
     const page = await newSpecPage({
       components: [Button, DataTable],
       template: () => (
-        <ic-data-table
+        <ic-unstable-data-table
           caption="test table"
           columns={columns}
           data={data}
-        ></ic-data-table>
+        ></ic-unstable-data-table>
       ),
     });
 

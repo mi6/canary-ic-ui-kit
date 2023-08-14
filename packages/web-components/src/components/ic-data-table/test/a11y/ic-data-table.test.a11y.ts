@@ -5,7 +5,7 @@ import { checkShadowElementRendersCorrectly } from "../../../../utils/testa11y.h
 describe("ic-data-table", () => {
   it("passes accessibility", async () => {
     const el = await fixture(
-      `<ic-data-table></ic-data-table>
+      `<ic-unstable-data-table></ic-unstable-data-table>
       <script>
         var dataTable = document.querySelector('ic-data-table');
         dataTable.columns = [
