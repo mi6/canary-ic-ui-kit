@@ -3,11 +3,14 @@
   "version": "2.1.0-canary",
   "command": {
     "publish": {
-      "conventionalCommits": true,
       "registry": "https://registry.npmjs.org"
     },
     "version": {
-      "message": "chore(release): [ci skip] components publish"
+      "conventionalCommits": true,
+      "conventionalPrerelease": true,
+      "preid": "canary",
+      
+      "message": "chore(release): [ci skip] canary components publish"
     }
   }
 }
