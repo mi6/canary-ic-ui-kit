@@ -64,7 +64,6 @@ jobs:
         with:
           TOKEN: ${{ secrets.PUBLISH_PAT }}
           fetch-depth: "0"
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - uses: actions/setup-node@v3
         with:
           node-version: 18
