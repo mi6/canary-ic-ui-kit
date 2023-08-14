@@ -10,8 +10,6 @@ import { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./com
 import { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
 import { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 import { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
-import { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableSortOrderOptions } from "./components/ic-data-table/ic-data-table.types";
-import { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationControlTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 import { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 import { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
 import { IcAriaLiveModeVariants } from "./components/ic-input-validation/ic-input-validation.types";
@@ -19,6 +17,7 @@ import { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicato
 import { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 import { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 import { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
+import { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationControlTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 import { IcThemeForeground as IcThemeForeground1 } from "./interface";
 import { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 import { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
@@ -30,13 +29,12 @@ import { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 import { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 import { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 import { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
+import { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableSortOrderOptions } from "./components/ic-data-table/ic-data-table.types";
 export { IcActivationTypes, IcAdditionalFieldTypes, IcAlignment, IcAutocompleteTypes, IcAutocorrectStates, IcBlurEventDetail, IcInformationStatusOrEmpty, IcMenuOption, IcOrientation, IcSearchMatchPositions, IcSizes, IcStatusVariants, IcTheme, IcThemeForeground, IcThemeForegroundNoDefault, IcTypographyVariants, IcValueEventDetail } from "./utils/types";
 export { IcButtonTooltipPlacement, IcButtonTypes, IcButtonVariants } from "./components/ic-button/ic-button.types";
 export { IcChangeEventDetail } from "./components/ic-checkbox-group/ic-checkbox-group.types";
 export { IcChipAppearance } from "./components/ic-chip/ic-chip.types";
 export { IcProtectiveMarkings } from "./components/ic-classification-banner/ic-classification-banner.types";
-export { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableSortOrderOptions } from "./components/ic-data-table/ic-data-table.types";
-export { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationControlTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 export { IcFooterBreakpoints } from "./components/ic-footer/ic-footer.types";
 export { IcHeroContentAlignments } from "./components/ic-hero/ic-hero.types";
 export { IcAriaLiveModeVariants } from "./components/ic-input-validation/ic-input-validation.types";
@@ -44,6 +42,7 @@ export { IcLoadingSizes, IcLoadingTypes } from "./components/ic-loading-indicato
 export { IcSearchBarBlurEventDetail, IcSearchBarSearchModes } from "./components/ic-search-bar/ic-search-bar.types";
 export { IcMenuChangeEventDetail, IcMenuOptionIdEventDetail, IcOptionSelectEventDetail } from "./components/ic-menu/ic-menu.types";
 export { IcMenuItemVariants } from "./components/ic-menu-item/ic-menu-item.types";
+export { IcChangeEventDetail as IcChangeEventDetail1, IcPaginationAlignmentOptions, IcPaginationControlTypes, IcPaginationTypes } from "./components/ic-pagination/ic-pagination.types";
 export { IcThemeForeground as IcThemeForeground1 } from "./interface";
 export { IcPaginationItemType } from "./components/ic-pagination-item/ic-pagination-item.types";
 export { IcChangeEventDetail as IcChangeEventDetail2 } from "./components/ic-radio-group/ic-radio-group.types";
@@ -55,6 +54,7 @@ export { IcSwitchChangeEventDetail } from "./components/ic-switch/ic-switch.type
 export { IcTabClickEventDetail, IcTabSelectEventDetail } from "./components/ic-tab/ic-tab.types";
 export { IcAriaAutocompleteTypes, IcTextFieldInputModes, IcTextFieldTypes } from "./components/ic-text-field/ic-text-field.types";
 export { IcTooltipPlacements } from "./components/ic-tooltip/ic-tooltip.types";
+export { IcDataTableColumnObject, IcDataTableDensityOptions, IcDataTableSortOrderOptions } from "./components/ic-data-table/ic-data-table.types";
 export namespace Components {
     interface IcAlert {
         /**
@@ -425,66 +425,6 @@ export namespace Components {
           * The value of the middle (right if no end-component supplied) cell of the row.
          */
         "value": string;
-    }
-    interface IcDataTable {
-        /**
-          * The title for the table only visible to screen readers.
-         */
-        "caption": string;
-        /**
-          * The column headers for the table.
-         */
-        "columns": IcDataTableColumnObject[];
-        /**
-          * The row content for the table.
-         */
-        "data": { [key: string]: any }[];
-        /**
-          * Set the density of the table including font and padding.
-         */
-        "density"?: IcDataTableDensityOptions;
-        /**
-          * Applies a border to the table container.
-         */
-        "embedded"?: boolean;
-        /**
-          * If `true`, column headers will not be visible.
-         */
-        "hideColumnHeaders"?: boolean;
-        /**
-          * Sets the props for the pagination bar.
-         */
-        "paginationOptions"?: {
-    itemsPerPage?: { label: string; value: string }[];
-    type?: IcPaginationTypes;
-    control?: IcPaginationControlTypes;
-    itemsPerPageControl?: boolean;
-    goToPageControl?: boolean;
-    alignment?: IcPaginationAlignmentOptions;
-  };
-        /**
-          * If `true`, adds a pagination bar to the bottom of the table.
-         */
-        "showPagination"?: boolean;
-        /**
-          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
-         */
-        "sortOptions"?: {
-    sortOrders: IcDataTableSortOrderOptions[];
-    defaultColumn?: string;
-  };
-        /**
-          * If `true`, allows table columns to be sorted using applied sort buttons.
-         */
-        "sortable"?: boolean;
-        /**
-          * If `true`, column headers will remain at the top of the table when scrolling vertically.
-         */
-        "stickyColumnHeaders"?: boolean;
-        /**
-          * If `true`, row headers will remain to the left when scrolling horizontally.
-         */
-        "stickyRowHeaders"?: boolean;
     }
     interface IcDialog {
         /**
@@ -2026,6 +1966,66 @@ export namespace Components {
          */
         "variant"?: IcTypographyVariants;
     }
+    interface IcUnstableDataTable {
+        /**
+          * The title for the table only visible to screen readers.
+         */
+        "caption": string;
+        /**
+          * The column headers for the table.
+         */
+        "columns": IcDataTableColumnObject[];
+        /**
+          * The row content for the table.
+         */
+        "data": { [key: string]: any }[];
+        /**
+          * Set the density of the table including font and padding.
+         */
+        "density"?: IcDataTableDensityOptions;
+        /**
+          * Applies a border to the table container.
+         */
+        "embedded"?: boolean;
+        /**
+          * If `true`, column headers will not be visible.
+         */
+        "hideColumnHeaders"?: boolean;
+        /**
+          * Sets the props for the pagination bar.
+         */
+        "paginationOptions"?: {
+    itemsPerPage?: { label: string; value: string }[];
+    type?: IcPaginationTypes;
+    control?: IcPaginationControlTypes;
+    itemsPerPageControl?: boolean;
+    goToPageControl?: boolean;
+    alignment?: IcPaginationAlignmentOptions;
+  };
+        /**
+          * If `true`, adds a pagination bar to the bottom of the table.
+         */
+        "showPagination"?: boolean;
+        /**
+          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
+         */
+        "sortOptions"?: {
+    sortOrders: IcDataTableSortOrderOptions[];
+    defaultColumn?: string;
+  };
+        /**
+          * If `true`, allows table columns to be sorted using applied sort buttons.
+         */
+        "sortable"?: boolean;
+        /**
+          * If `true`, column headers will remain at the top of the table when scrolling vertically.
+         */
+        "stickyColumnHeaders"?: boolean;
+        /**
+          * If `true`, row headers will remain to the left when scrolling horizontally.
+         */
+        "stickyRowHeaders"?: boolean;
+    }
 }
 export interface IcAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2203,12 +2203,6 @@ declare global {
     var HTMLIcDataRowElement: {
         prototype: HTMLIcDataRowElement;
         new (): HTMLIcDataRowElement;
-    };
-    interface HTMLIcDataTableElement extends Components.IcDataTable, HTMLStencilElement {
-    }
-    var HTMLIcDataTableElement: {
-        prototype: HTMLIcDataTableElement;
-        new (): HTMLIcDataTableElement;
     };
     interface HTMLIcDialogElement extends Components.IcDialog, HTMLStencilElement {
     }
@@ -2492,6 +2486,12 @@ declare global {
         prototype: HTMLIcTypographyElement;
         new (): HTMLIcTypographyElement;
     };
+    interface HTMLIcUnstableDataTableElement extends Components.IcUnstableDataTable, HTMLStencilElement {
+    }
+    var HTMLIcUnstableDataTableElement: {
+        prototype: HTMLIcUnstableDataTableElement;
+        new (): HTMLIcUnstableDataTableElement;
+    };
     interface HTMLElementTagNameMap {
         "ic-alert": HTMLIcAlertElement;
         "ic-back-to-top": HTMLIcBackToTopElement;
@@ -2505,7 +2505,6 @@ declare global {
         "ic-classification-banner": HTMLIcClassificationBannerElement;
         "ic-data-entity": HTMLIcDataEntityElement;
         "ic-data-row": HTMLIcDataRowElement;
-        "ic-data-table": HTMLIcDataTableElement;
         "ic-dialog": HTMLIcDialogElement;
         "ic-divider": HTMLIcDividerElement;
         "ic-footer": HTMLIcFooterElement;
@@ -2553,6 +2552,7 @@ declare global {
         "ic-tooltip": HTMLIcTooltipElement;
         "ic-top-navigation": HTMLIcTopNavigationElement;
         "ic-typography": HTMLIcTypographyElement;
+        "ic-unstable-data-table": HTMLIcUnstableDataTableElement;
     }
 }
 declare namespace LocalJSX {
@@ -2940,66 +2940,6 @@ declare namespace LocalJSX {
           * The value of the middle (right if no end-component supplied) cell of the row.
          */
         "value"?: string;
-    }
-    interface IcDataTable {
-        /**
-          * The title for the table only visible to screen readers.
-         */
-        "caption": string;
-        /**
-          * The column headers for the table.
-         */
-        "columns": IcDataTableColumnObject[];
-        /**
-          * The row content for the table.
-         */
-        "data"?: { [key: string]: any }[];
-        /**
-          * Set the density of the table including font and padding.
-         */
-        "density"?: IcDataTableDensityOptions;
-        /**
-          * Applies a border to the table container.
-         */
-        "embedded"?: boolean;
-        /**
-          * If `true`, column headers will not be visible.
-         */
-        "hideColumnHeaders"?: boolean;
-        /**
-          * Sets the props for the pagination bar.
-         */
-        "paginationOptions"?: {
-    itemsPerPage?: { label: string; value: string }[];
-    type?: IcPaginationTypes;
-    control?: IcPaginationControlTypes;
-    itemsPerPageControl?: boolean;
-    goToPageControl?: boolean;
-    alignment?: IcPaginationAlignmentOptions;
-  };
-        /**
-          * If `true`, adds a pagination bar to the bottom of the table.
-         */
-        "showPagination"?: boolean;
-        /**
-          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
-         */
-        "sortOptions"?: {
-    sortOrders: IcDataTableSortOrderOptions[];
-    defaultColumn?: string;
-  };
-        /**
-          * If `true`, allows table columns to be sorted using applied sort buttons.
-         */
-        "sortable"?: boolean;
-        /**
-          * If `true`, column headers will remain at the top of the table when scrolling vertically.
-         */
-        "stickyColumnHeaders"?: boolean;
-        /**
-          * If `true`, row headers will remain to the left when scrolling horizontally.
-         */
-        "stickyRowHeaders"?: boolean;
     }
     interface IcDialog {
         /**
@@ -4646,6 +4586,66 @@ declare namespace LocalJSX {
          */
         "variant"?: IcTypographyVariants;
     }
+    interface IcUnstableDataTable {
+        /**
+          * The title for the table only visible to screen readers.
+         */
+        "caption": string;
+        /**
+          * The column headers for the table.
+         */
+        "columns": IcDataTableColumnObject[];
+        /**
+          * The row content for the table.
+         */
+        "data"?: { [key: string]: any }[];
+        /**
+          * Set the density of the table including font and padding.
+         */
+        "density"?: IcDataTableDensityOptions;
+        /**
+          * Applies a border to the table container.
+         */
+        "embedded"?: boolean;
+        /**
+          * If `true`, column headers will not be visible.
+         */
+        "hideColumnHeaders"?: boolean;
+        /**
+          * Sets the props for the pagination bar.
+         */
+        "paginationOptions"?: {
+    itemsPerPage?: { label: string; value: string }[];
+    type?: IcPaginationTypes;
+    control?: IcPaginationControlTypes;
+    itemsPerPageControl?: boolean;
+    goToPageControl?: boolean;
+    alignment?: IcPaginationAlignmentOptions;
+  };
+        /**
+          * If `true`, adds a pagination bar to the bottom of the table.
+         */
+        "showPagination"?: boolean;
+        /**
+          * Sets the order columns will be sorted in and allows for 'default' sorts to be added.
+         */
+        "sortOptions"?: {
+    sortOrders: IcDataTableSortOrderOptions[];
+    defaultColumn?: string;
+  };
+        /**
+          * If `true`, allows table columns to be sorted using applied sort buttons.
+         */
+        "sortable"?: boolean;
+        /**
+          * If `true`, column headers will remain at the top of the table when scrolling vertically.
+         */
+        "stickyColumnHeaders"?: boolean;
+        /**
+          * If `true`, row headers will remain to the left when scrolling horizontally.
+         */
+        "stickyRowHeaders"?: boolean;
+    }
     interface IntrinsicElements {
         "ic-alert": IcAlert;
         "ic-back-to-top": IcBackToTop;
@@ -4659,7 +4659,6 @@ declare namespace LocalJSX {
         "ic-classification-banner": IcClassificationBanner;
         "ic-data-entity": IcDataEntity;
         "ic-data-row": IcDataRow;
-        "ic-data-table": IcDataTable;
         "ic-dialog": IcDialog;
         "ic-divider": IcDivider;
         "ic-footer": IcFooter;
@@ -4707,6 +4706,7 @@ declare namespace LocalJSX {
         "ic-tooltip": IcTooltip;
         "ic-top-navigation": IcTopNavigation;
         "ic-typography": IcTypography;
+        "ic-unstable-data-table": IcUnstableDataTable;
     }
 }
 export { LocalJSX as JSX };
@@ -4725,7 +4725,6 @@ declare module "@stencil/core" {
             "ic-classification-banner": LocalJSX.IcClassificationBanner & JSXBase.HTMLAttributes<HTMLIcClassificationBannerElement>;
             "ic-data-entity": LocalJSX.IcDataEntity & JSXBase.HTMLAttributes<HTMLIcDataEntityElement>;
             "ic-data-row": LocalJSX.IcDataRow & JSXBase.HTMLAttributes<HTMLIcDataRowElement>;
-            "ic-data-table": LocalJSX.IcDataTable & JSXBase.HTMLAttributes<HTMLIcDataTableElement>;
             "ic-dialog": LocalJSX.IcDialog & JSXBase.HTMLAttributes<HTMLIcDialogElement>;
             "ic-divider": LocalJSX.IcDivider & JSXBase.HTMLAttributes<HTMLIcDividerElement>;
             "ic-footer": LocalJSX.IcFooter & JSXBase.HTMLAttributes<HTMLIcFooterElement>;
@@ -4773,6 +4772,7 @@ declare module "@stencil/core" {
             "ic-tooltip": LocalJSX.IcTooltip & JSXBase.HTMLAttributes<HTMLIcTooltipElement>;
             "ic-top-navigation": LocalJSX.IcTopNavigation & JSXBase.HTMLAttributes<HTMLIcTopNavigationElement>;
             "ic-typography": LocalJSX.IcTypography & JSXBase.HTMLAttributes<HTMLIcTypographyElement>;
+            "ic-unstable-data-table": LocalJSX.IcUnstableDataTable & JSXBase.HTMLAttributes<HTMLIcUnstableDataTableElement>;
         }
     }
 }

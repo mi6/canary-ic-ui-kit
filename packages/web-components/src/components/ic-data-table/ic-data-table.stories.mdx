@@ -83,7 +83,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="basic table"></ic-data-table>`}
+      <ic-unstable-data-table caption="basic table"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -158,7 +158,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="embedded table" embedded="true"></ic-data-table>`}
+      <ic-unstable-data-table caption="embedded table" embedded="true"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -235,8 +235,8 @@ import readme from "./readme.md";
           ];
         });
       </script>
-      <ic-data-table caption="Dense" density="dense"></ic-data-table>
-      <ic-data-table caption="Spacious" density="spacious"></ic-data-table>`}
+      <ic-unstable-data-table caption="Dense" density="dense"></ic-unstable-data-table>
+      <ic-unstable-data-table caption="Spacious" density="spacious"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -420,11 +420,11 @@ import readme from "./readme.md";
           dataTable.setAttribute("sticky-column-headers", boolean);
         }
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="scrollable table"
         embedded="true"
         style="height: 366px;"
-      ></ic-data-table>
+      ></ic-unstable-data-table>
       <div style="display:flex;padding-top:10px;gap:8px;">
         <ic-button onclick="toggleStickyHeader(true)">Stick header</ic-button>
         <ic-button onclick="toggleStickyHeader(false)"
@@ -514,7 +514,7 @@ import readme from "./readme.md";
         },
       ];
     </script>
-    <ic-data-table caption="table with row headers"></ic-data-table>`}</Story>
+    <ic-unstable-data-table caption="table with row headers"></ic-unstable-data-table>`}</Story>
 </Canvas>
 
 ### Column overrides
@@ -590,7 +590,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="table with column overrides"></ic-data-table>`}
+      <ic-unstable-data-table caption="table with column overrides"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -682,7 +682,7 @@ import readme from "./readme.md";
         },
       ];
     </script>
-    <ic-data-table caption="table with row overrides"></ic-data-table>`}</Story>
+    <ic-unstable-data-table caption="table with row overrides"></ic-unstable-data-table>`}</Story>
 </Canvas>
 
 ### Cell overrides
@@ -776,7 +776,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="table with cell overrides"></ic-data-table>`}
+      <ic-unstable-data-table caption="table with cell overrides"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -866,7 +866,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="table with links in data"></ic-data-table>`}
+      <ic-unstable-data-table caption="table with links in data"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -952,9 +952,9 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="table with HTML elements in data"
-      ></ic-data-table>`}
+      ></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1029,7 +1029,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="sortable table" sortable="true"></ic-data-table>`}
+      <ic-unstable-data-table caption="sortable table" sortable="true"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1107,10 +1107,10 @@ import readme from "./readme.md";
           sortOrders: ["unsorted", "descending", "ascending"],
         };
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="sortable table with custom sort order"
         sortable="true"
-      ></ic-data-table>`}
+      ></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1189,10 +1189,10 @@ import readme from "./readme.md";
           defaultColumn: "age",
         };
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="sortable table with default sort"
         sortable="true"
-      ></ic-data-table>`}
+      ></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1279,7 +1279,7 @@ import readme from "./readme.md";
           },
         ];
       </script>
-      <ic-data-table caption="dates in table" sortable="true"></ic-data-table>`}
+      <ic-unstable-data-table caption="dates in table" sortable="true"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1469,10 +1469,10 @@ import readme from "./readme.md";
           goToPageControl: true,
         };
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="table with pagination"
         show-pagination="true"
-      ></ic-data-table>`}
+      ></ic-unstable-data-table>`}
   </Story>
 </Canvas>
 
@@ -1859,13 +1859,13 @@ import readme from "./readme.md";
           dataTable.setAttribute("sticky-column-headers", boolean);
         }
       </script>
-      <ic-data-table
+      <ic-unstable-data-table
         caption="complex example table"
         embedded="true"
         style="height: 366px;"
         show-pagination="true"
         sortable="true"
-      ></ic-data-table>
+      ></ic-unstable-data-table>
       <div style="display:flex;padding-top:10px;gap:8px;">
         <ic-button onclick="toggleStickyHeader(true)">Stick header</ic-button>
         <ic-button onclick="toggleStickyHeader(false)"
@@ -1948,6 +1948,6 @@ import readme from "./readme.md";
           ];
         }, 5000);
       </script>
-      <ic-data-table caption="async table"></ic-data-table>`}
+      <ic-unstable-data-table caption="async table"></ic-unstable-data-table>`}
   </Story>
 </Canvas>
