@@ -11,7 +11,7 @@ beforeAll(() => {
   jest.spyOn(console, "warn").mockImplementation(jest.fn());
 });
 
-const icDataTable = "ic-data-table";
+const icDataTable = "ic-unstable-data-table";
 const employeeNumber = "Employee number";
 const name1 = "John Smith";
 const name2 = "Sally Jones";

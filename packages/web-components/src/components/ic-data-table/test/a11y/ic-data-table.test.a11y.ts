@@ -2,12 +2,12 @@ import { fixture } from "@open-wc/testing-helpers";
 import { axe } from "jest-axe";
 import { checkShadowElementRendersCorrectly } from "../../../../utils/testa11y.helpers";
 
-describe("ic-data-table", () => {
+describe("ic-unstable-data-table", () => {
   it("passes accessibility", async () => {
     const el = await fixture(
       `<ic-unstable-data-table></ic-unstable-data-table>
       <script>
-        var dataTable = document.querySelector('ic-data-table');
+        var dataTable = document.querySelector('ic-unstable-data-table');
         dataTable.columns = [
             {key: "name", title: "Name", dataType: "string"},
             {key: "age", title: "Age", dataType: "number"},
