@@ -5,88 +5,89 @@ import {
   ArgsTable,
   Description,
 } from "@storybook/addon-docs";
-import { IcDataTable, IcButton } from "../components";
-import { useState } from "react"; 
+import { IcUnstableDataTable, IcButton } from "../components";
+import { useState } from "react";
 import readme from "../../../web-components/src/components/ic-data-table/readme.md";
 
-<Meta
-  title="React Components/Data table"
-  component={IcDataTable}
-/>
+<Meta title="React Components/Data table" component={IcUnstableDataTable} />
 
 <Description markdown={readme} />
 
 ### Basic table
 
 export const basicColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const basicData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const basicData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Basic table">
-      <IcDataTable caption="basic table" columns={basicColumns} data={basicData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="basic table"
+      columns={basicColumns}
+      data={basicData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
@@ -94,7 +95,12 @@ export const basicColumns = [
 
 <Canvas>
   <Story name="Embedded">
-      <IcDataTable caption="embedded table" embedded="true" columns={basicColumns} data={basicData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="embedded table"
+      embedded="true"
+      columns={basicColumns}
+      data={basicData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
@@ -102,1650 +108,1689 @@ export const basicColumns = [
 
 <Canvas>
   <Story name="Density">
-      <IcDataTable caption="dense table" density="dense" columns={basicColumns} data={basicData}></IcDataTable>
-      <IcDataTable caption="spacious table" density="spacious" columns={basicColumns} data={basicData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="dense table"
+      density="dense"
+      columns={basicColumns}
+      data={basicData}
+    ></IcUnstableDataTable>
+    <IcUnstableDataTable
+      caption="spacious table"
+      density="spacious"
+      columns={basicColumns}
+      data={basicData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Scrollable
 
 export const longDataColumns = [
-          {
-            key: "employeeNumber",
-            title: "Employee number",
-            dataType: "number",
-            columnAlignment: { horizontal: "left" },
-          },
-          {
-            key: "name",
-            title: "Name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const longData = [
-          {
-            employeeNumber: 1,
-            name: "Joe Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 2,
-            name: "Sarah Jones",
-            age: 28,
-            jobTitle: "Developer",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 3,
-            name: "Mark Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 4,
-            name: "Naomi Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 5,
-            name: "Luke Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 6,
-            name: "Dave Smith",
-            age: 33,
-            jobTitle: "Analyst",
-            address: "4 Extra Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 7,
-            lastName: "Amy Fox",
-            age: 27,
-            jobTitle: "Analyst",
-            address: "3 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 8,
-            name: "Mary Cooper",
-            age: 31,
-            jobTitle: "Developer",
-            address: "8 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 9,
-            name: "Alice Cole",
-            age: 38,
-            jobTitle: "Team Lead",
-            address: "10 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 10,
-            name: "Ben Fields",
-            age: 40,
-            jobTitle: "Team Lead",
-            address: "14 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 11,
-            name: "Pete Norton",
-            age: 32,
-            jobTitle: "Analyst",
-            address: "6 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 12,
-            name: "Ashley Langford",
-            age: 29,
-            jobTitle: "Developer",
-            address: "7 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 13,
-            name: "Michael Hall",
-            age: 35,
-            jobTitle: "Team Lead",
-            address: "5 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 14,
-            name: "David Frank",
-            age: 28,
-            jobTitle: "Developer",
-            address: "3 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 15,
-            name: "Mary Lincoln",
-            age: 23,
-            jobTitle: "Developer",
-            address: "10 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 16,
-            name: "Will Barns",
-            age: 36,
-            jobTitle: "Analyst",
-            address: "1 New Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 17,
-            name: "Elizabeth Long",
-            age: 43,
-            jobTitle: "Analyst",
-            address: "9 Short Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 18,
-            name: "Keith Jones",
-            age: 37,
-            jobTitle: "Developer",
-            address: "11 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 19,
-            name: "Olivia Brown",
-            age: 19,
-            jobTitle: "Trainee Analyst",
-            address: "4 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 20,
-            name: "Tim Green",
-            age: 50,
-            jobTitle: "Developer",
-            address: "2 Long Street, Town, Country, Postcode",
-          },
-        ];
-        
-        export const toggleStickyHeader = (boolean) => {
-          const dataTable = document.querySelector('ic-data-table');
-          dataTable.setAttribute("sticky-column-headers", boolean);
-        }
+  {
+    key: "employeeNumber",
+    title: "Employee number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const longData = [
+  {
+    employeeNumber: 1,
+    name: "Joe Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 2,
+    name: "Sarah Jones",
+    age: 28,
+    jobTitle: "Developer",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 3,
+    name: "Mark Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 4,
+    name: "Naomi Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 5,
+    name: "Luke Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 6,
+    name: "Dave Smith",
+    age: 33,
+    jobTitle: "Analyst",
+    address: "4 Extra Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 7,
+    lastName: "Amy Fox",
+    age: 27,
+    jobTitle: "Analyst",
+    address: "3 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 8,
+    name: "Mary Cooper",
+    age: 31,
+    jobTitle: "Developer",
+    address: "8 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 9,
+    name: "Alice Cole",
+    age: 38,
+    jobTitle: "Team Lead",
+    address: "10 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 10,
+    name: "Ben Fields",
+    age: 40,
+    jobTitle: "Team Lead",
+    address: "14 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 11,
+    name: "Pete Norton",
+    age: 32,
+    jobTitle: "Analyst",
+    address: "6 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 12,
+    name: "Ashley Langford",
+    age: 29,
+    jobTitle: "Developer",
+    address: "7 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 13,
+    name: "Michael Hall",
+    age: 35,
+    jobTitle: "Team Lead",
+    address: "5 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 14,
+    name: "David Frank",
+    age: 28,
+    jobTitle: "Developer",
+    address: "3 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 15,
+    name: "Mary Lincoln",
+    age: 23,
+    jobTitle: "Developer",
+    address: "10 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 16,
+    name: "Will Barns",
+    age: 36,
+    jobTitle: "Analyst",
+    address: "1 New Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 17,
+    name: "Elizabeth Long",
+    age: 43,
+    jobTitle: "Analyst",
+    address: "9 Short Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 18,
+    name: "Keith Jones",
+    age: 37,
+    jobTitle: "Developer",
+    address: "11 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 19,
+    name: "Olivia Brown",
+    age: 19,
+    jobTitle: "Trainee Analyst",
+    address: "4 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 20,
+    name: "Tim Green",
+    age: 50,
+    jobTitle: "Developer",
+    address: "2 Long Street, Town, Country, Postcode",
+  },
+];
+
+export const toggleStickyHeader = (boolean) => {
+  const dataTable = document.querySelector("ic-data-table");
+  dataTable.setAttribute("sticky-column-headers", boolean);
+};
 
 <Canvas>
   <Story name="Scrollable">
-      <IcDataTable
-        caption="scrollable table"
-        embedded="true"
-        style={{height: "366px"}}
-        columns={longDataColumns}
-        data={longData}
-      ></IcDataTable>
-      <div style={{display: "flex", paddingTop: "10px", gap: "8px"}}>
-        <IcButton onClick={() => toggleStickyHeader(true)}>Stick header</IcButton>
-        <IcButton onClick={() => toggleStickyHeader(false)}>Unstick header</IcButton>
-      </div>
+    <IcUnstableDataTable
+      caption="scrollable table"
+      embedded="true"
+      style={{ height: "366px" }}
+      columns={longDataColumns}
+      data={longData}
+    ></IcUnstableDataTable>
+    <div style={{ display: "flex", paddingTop: "10px", gap: "8px" }}>
+      <IcButton onClick={() => toggleStickyHeader(true)}>Stick header</IcButton>
+      <IcButton onClick={() => toggleStickyHeader(false)}>
+        Unstick header
+      </IcButton>
+    </div>
   </Story>
 </Canvas>
 
 ### Row headers
 
 export const rowHeaderColumns = [
-        {
-          key: "header",
-          title: "Job type",
-          dataType: "string",
-        },
-        {
-          key: "firstName",
-          title: "First name",
-          dataType: "string",
-        },
-        {
-          key: "lastName",
-          title: "Last name",
-          dataType: "string",
-        },
-        {
-          key: "age",
-          title: "Age",
-          dataType: "number",
-        },
-        {
-          key: "jobTitle",
-          title: "Job title",
-          dataType: "string",
-        },
-        {
-          key: "address",
-          title: "Address",
-          dataType: "address",
-        },
-      ];
-      
-      export const rowHeaderData = [
-        {
-          header: { title: "Employee" },
-          firstName: "Joe",
-          lastName: "Bloggs",
-          age: 30,
-          jobTitle: "Developer",
-          address: "1 Main Street, Town, County, Postcode",
-        },
-        {
-          header: { title: "Employee" },
-          firstName: "Sarah",
-          lastName: "Smith",
-          age: 28,
-          jobTitle: "Analyst",
-          address: "2 Main Street, Town, Country, Postcode",
-        },
-        {
-          header: { title: "Manager" },
-          firstName: "Mark",
-          lastName: "Owens",
-          age: 45,
-          jobTitle: "Team Lead",
-          address: "12 Key Street, Town, Country, Postcode",
-        },
-        {
-          header: { title: "Employee" },
-          firstName: "Naomi",
-          lastName: "Thomas",
-          age: 32,
-          jobTitle: "Developer",
-          address: "8 Side Street, Town, Country, Postcode",
-        },
-        {
-          header: { title: "Apprentice" },
-          firstName: "Luke",
-          lastName: "Ashford",
-          age: 18,
-          jobTitle: "Junior Developer",
-          address: "5 New Street, Town, Country, Postcode",
-        },
-      ];
+  {
+    key: "header",
+    title: "Job type",
+    dataType: "string",
+  },
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const rowHeaderData = [
+  {
+    header: { title: "Employee" },
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    header: { title: "Employee" },
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    header: { title: "Manager" },
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    header: { title: "Employee" },
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    header: { title: "Apprentice" },
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Row headers">
-    <IcDataTable caption="table with row headers" columns={rowHeaderColumns} data={rowHeaderData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with row headers"
+      columns={rowHeaderColumns}
+      data={rowHeaderData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Column overrides
 
 export const columnOverrideColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-            columnAlignment: { horizontal: "center", vertical: "middle" },
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-            emphasis: "high",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-    export const columnOverrideData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnAlignment: { horizontal: "center", vertical: "middle" },
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+    emphasis: "high",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const columnOverrideData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Column overrides">
-      <IcDataTable caption="table with column overrides" columns={columnOverrideColumns} data={columnOverrideData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with column overrides"
+      columns={columnOverrideColumns}
+      data={columnOverrideData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Row overrides
 
 export const rowOverrideColumns = [
-        {
-          key: "header",
-          title: "Job type",
-          dataType: "string",
-        },
-        {
-          key: "firstName",
-          title: "First name",
-          dataType: "string",
-        },
-        {
-          key: "lastName",
-          title: "Last name",
-          dataType: "string",
-        },
-        {
-          key: "age",
-          title: "Age",
-          dataType: "number",
-        },
-        {
-          key: "jobTitle",
-          title: "Job title",
-          dataType: "string",
-        },
-        {
-          key: "address",
-          title: "Address",
-          dataType: "address",
-        },
-      ];
-    
-    export const rowOverrideData = [
-        {
-          header: { title: "Employee" },
-          firstName: "Joe",
-          lastName: "Bloggs",
-          age: 30,
-          jobTitle: "Developer",
-          address: "1 Main Street, Town, County, Postcode",
-        },
-        {
-          header: { title: "Employee" },
-          firstName: "Sarah",
-          lastName: "Smith",
-          age: 28,
-          jobTitle: "Analyst",
-          address: "2 Main Street, Town, Country, Postcode",
-        },
-        {
-          header: {
-            title: "Manager",
-            rowAlignment: "middle",
-            emphasis: "high",
-          },
-          firstName: "Mark",
-          lastName: "Owens",
-          age: 45,
-          jobTitle: "Team Lead",
-          address: "12 Key Street, Town, Country, Postcode",
-        },
-        {
-          header: { title: "Employee" },
-          firstName: "Naomi",
-          lastName: "Thomas",
-          age: 32,
-          jobTitle: "Developer",
-          address: "8 Side Street, Town, Country, Postcode",
-        },
-        {
-          header: {
-            title: "Apprentice",
-            rowAlignment: "middle",
-            emphasis: "low",
-          },
-          firstName: "Luke",
-          lastName: "Ashford",
-          age: 18,
-          jobTitle: "Junior Developer",
-          address: "5 New Street, Town, Country, Postcode",
-        },
-      ];
+  {
+    key: "header",
+    title: "Job type",
+    dataType: "string",
+  },
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const rowOverrideData = [
+  {
+    header: { title: "Employee" },
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    header: { title: "Employee" },
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    header: {
+      title: "Manager",
+      rowAlignment: "middle",
+      emphasis: "high",
+    },
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    header: { title: "Employee" },
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    header: {
+      title: "Apprentice",
+      rowAlignment: "middle",
+      emphasis: "low",
+    },
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Row overrides">
-    <IcDataTable caption="table with row overrides" columns={rowOverrideColumns} data={rowOverrideData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with row overrides"
+      columns={rowOverrideColumns}
+      data={rowOverrideData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Cell overrides
 
 export const cellOverrideColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
 export const cellOverrideData = [
-          {
-            firstName: {
-              data: "Joe",
-              cellAlignment: { horizontal: "center", vertical: "middle" },
-              emphasis: "high",
-            },
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: {
-              data: "Smith",
-              cellAlignment: { horizontal: "center", vertical: "middle" },
-              emphasis: "high",
-            },
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: {
-              data: 45,
-              cellAlignment: { horizontal: "center", vertical: "middle" },
-              emphasis: "high",
-            },
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: {
-              data: "Developer",
-              cellAlignment: { horizontal: "center", vertical: "middle" },
-              emphasis: "high",
-            },
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: {
-              data: "5 New Street, Town, Country, Postcode",
-              cellAlignment: { horizontal: "center", vertical: "middle" },
-              emphasis: "high",
-            },
-          },
-        ];
+  {
+    firstName: {
+      data: "Joe",
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: {
+      data: "Smith",
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: {
+      data: 45,
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: {
+      data: "Developer",
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: {
+      data: "5 New Street, Town, Country, Postcode",
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+  },
+];
 
 <Canvas>
   <Story name="Cell overrides">
-      <IcDataTable caption="table with cell overrides" columns={cellOverrideColumns} data={cellOverrideData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with cell overrides"
+      columns={cellOverrideColumns}
+      data={cellOverrideData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Links in data
 
 export const dataLinkColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-    
-    export const dataLink = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: {
-              data: "Developer",
-              href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
-            },
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: {
-              data: "Analyst",
-              href: "https://en.wikipedia.org/wiki/Business_analyst",
-            },
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owen",
-            age: 45,
-            jobTitle: {
-              data: "Team Lead",
-              href: "https://en.wikipedia.org/wiki/Management",
-            },
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: {
-              data: "Developer",
-              href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
-            },
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: {
-              data: "Developer",
-              href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
-            },
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const dataLink = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: {
+      data: "Developer",
+      href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
+    },
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: {
+      data: "Analyst",
+      href: "https://en.wikipedia.org/wiki/Business_analyst",
+    },
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owen",
+    age: 45,
+    jobTitle: {
+      data: "Team Lead",
+      href: "https://en.wikipedia.org/wiki/Management",
+    },
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: {
+      data: "Developer",
+      href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
+    },
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: {
+      data: "Developer",
+      href: "https://en.wikipedia.org/wiki/Software_development#Software_developer",
+    },
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Links in data">
-      <IcDataTable caption="table with links in data" columns={dataLinkColumns} data={dataLink}></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with links in data"
+      columns={dataLinkColumns}
+      data={dataLink}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### HTML elements in data
 
 export const htmlElementColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-          {
-            key: "actions",
-            title: "Actions",
-            dataType: "element",
-            columnAlignment: { horizontal: "center" },
-          },
-        ];
-    
-    export const htmlElementData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-            actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Developer",
-            address: "2 Main Street, Town, Country, Postcode",
-            actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-            actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
-          },
-          {
-            firstName: "Naomit",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-            actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-            actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+  {
+    key: "actions",
+    title: "Actions",
+    dataType: "element",
+    columnAlignment: { horizontal: "center" },
+  },
+];
+
+export const htmlElementData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Developer",
+    address: "2 Main Street, Town, Country, Postcode",
+    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+  },
+  {
+    firstName: "Naomit",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+    actions: `<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>`,
+  },
+];
 
 <Canvas>
   <Story name="HTML elements in data">
-      <IcDataTable
-        caption="table with HTML elements in data"
-        columns={htmlElementColumns}
-        data={htmlElementData}
-      ></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with HTML elements in data"
+      columns={htmlElementColumns}
+      data={htmlElementData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Sortable
 
 export const sortableColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-    export const sortableData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const sortableData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Sortable">
-      <IcDataTable caption="sortable table" sortable="true" columns={sortableColumns} data={sortableData}></IcDataTable>
+    <IcUnstableDataTable
+      caption="sortable table"
+      sortable="true"
+      columns={sortableColumns}
+      data={sortableData}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Custom sort order
 
 export const customSortcolumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const customSortData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
-        
-        export const customSortOrderOptions = {
-          sortOrders: ["unsorted", "descending", "ascending"],
-        };
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const customSortData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
+
+export const customSortOrderOptions = {
+  sortOrders: ["unsorted", "descending", "ascending"],
+};
 
 <Canvas>
   <Story name="Custom sort order">
-      <IcDataTable
-        caption="sortable table with custom sort order"
-        sortable="true"
-        columns={customSortcolumns}
-        data={customSortData}
-        sortOptions={customSortOrderOptions}
-      ></IcDataTable>
+    <IcUnstableDataTable
+      caption="sortable table with custom sort order"
+      sortable="true"
+      columns={customSortcolumns}
+      data={customSortData}
+      sortOptions={customSortOrderOptions}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Default sorted column
 
 export const defaultSortColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const defaultSortData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-        ];
-        
-        export const defaultSort = {
-          sortOrders: ["descending", "unsorted", "ascending"],
-          defaultColumn: "age",
-        };
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const defaultSortData = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
+
+export const defaultSort = {
+  sortOrders: ["descending", "unsorted", "ascending"],
+  defaultColumn: "age",
+};
 
 <Canvas>
   <Story name="Default sorted column">
-      <IcDataTable
-        caption="sortable table with default sort"
-        sortable="true"
-        columns={defaultSortColumns}
-        data={defaultSortData}
-        sortOptions={defaultSort}
-      ></IcDataTable>
+    <IcUnstableDataTable
+      caption="sortable table with default sort"
+      sortable="true"
+      columns={defaultSortColumns}
+      data={defaultSortData}
+      sortOptions={defaultSort}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Sort dates
 
 export const dateColumns = [
-          {
-            key: "firstName",
-            title: "First name",
-            dataType: "string",
-          },
-          {
-            key: "lastName",
-            title: "Last name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-          {
-            key: "birthday",
-            title: "Birthday",
-            dataType: "date",
-          },
-        ];
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+  {
+    key: "birthday",
+    title: "Birthday",
+    dataType: "date",
+  },
+];
 
 export const dateData = [
-          {
-            firstName: "Joe",
-            lastName: "Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-            birthday: "12-11-2000",
-          },
-          {
-            firstName: "Sarah",
-            lastName: "Smith",
-            age: 28,
-            jobTitle: "Analyst",
-            address: "2 Main Street, Town, Country, Postcode",
-            birthday: "12-11-2001",
-          },
-          {
-            firstName: "Mark",
-            lastName: "Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, Country, Postcode",
-            birthday: "1212-11-13",
-          },
-          {
-            firstName: "Naomi",
-            lastName: "Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-            birthday: new Date("2004-03-27"),
-          },
-          {
-            firstName: "Luke",
-            lastName: "Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-            birthday: new Date("2007-01-01").toLocaleDateString(),
-          },
-        ];
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+    birthday: "12-11-2000",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+    birthday: "12-11-2001",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+    birthday: "1212-11-13",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+    birthday: new Date("2004-03-27"),
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+    birthday: new Date("2007-01-01").toLocaleDateString(),
+  },
+];
 
 <Canvas>
   <Story name="Sort dates">
-    <IcDataTable
+    <IcUnstableDataTable
       caption="dates in table"
       sortable={true}
       columns={dateColumns}
       data={dateData}
-    ></IcDataTable>
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Pagination
 
 export const paginationColumns = [
-          {
-            key: "employeeNumber",
-            title: "Employee number",
-            dataType: "number",
-            columnAlignment: { horizontal: "left" },
-          },
-          {
-            key: "name",
-            title: "Name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const paginationData = [
-          {
-            employeeNumber: 1,
-            name: "Joe Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 2,
-            name: "Sarah Jones",
-            age: 28,
-            jobTitle: "Developer",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 3,
-            name: "Mark Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 4,
-            name: "Naomi Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 5,
-            name: "Luke Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 6,
-            name: "Dave Smith",
-            age: 33,
-            jobTitle: "Analyst",
-            address: "4 Extra Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 7,
-            name: "Amy Fox",
-            age: 27,
-            jobTitle: "Analyst",
-            address: "3 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 8,
-            name: "Mary Cooper",
-            age: 31,
-            jobTitle: "Developer",
-            address: "8 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 9,
-            name: "Alice Cole",
-            age: 38,
-            jobTitle: "Team Lead",
-            address: "10 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 10,
-            name: "Ben Fields",
-            age: 40,
-            jobTitle: "Team Lead",
-            address: "14 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 11,
-            name: "Pete Norton",
-            age: 32,
-            jobTitle: "Analyst",
-            address: "6 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 12,
-            name: "Ashley Langford",
-            age: 29,
-            jobTitle: "Developer",
-            address: "7 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 13,
-            name: "Michael Hall",
-            age: 35,
-            jobTitle: "Team Lead",
-            address: "5 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 14,
-            name: "David Frank",
-            age: 28,
-            jobTitle: "Developer",
-            address: "3 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 15,
-            name: "Mary Lincoln",
-            age: 23,
-            jobTitle: "Developer",
-            address: "10 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 16,
-            name: "Will Barns",
-            age: 36,
-            jobTitle: "Analyst",
-            address: "1 New Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 17,
-            name: "Elizabeth Long",
-            age: 43,
-            jobTitle: "Analyst",
-            address: "9 Short Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 18,
-            name: "Keith Jones",
-            age: 37,
-            jobTitle: "Developer",
-            address: "11 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 19,
-            name: "Olivia Brown",
-            age: 19,
-            jobTitle: "Trainee Analyst",
-            address: "4 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 20,
-            name: "Tim Green",
-            age: 50,
-            jobTitle: "Developer",
-            address: "2 Long Street, Town, Country, Postcode",
-          },
-        ];
-        
-        export const paginationOptions = {
-          itemsPerPage: [
-            { label: "5", value: "5" },
-            { label: "10", value: "10" },
-            { label: "15", value: "15" },
-          ],
-          itemsPerPageControl: true,
-          goToPageControl: true,
-        };
+  {
+    key: "employeeNumber",
+    title: "Employee number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const paginationData = [
+  {
+    employeeNumber: 1,
+    name: "Joe Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 2,
+    name: "Sarah Jones",
+    age: 28,
+    jobTitle: "Developer",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 3,
+    name: "Mark Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 4,
+    name: "Naomi Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 5,
+    name: "Luke Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 6,
+    name: "Dave Smith",
+    age: 33,
+    jobTitle: "Analyst",
+    address: "4 Extra Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 7,
+    name: "Amy Fox",
+    age: 27,
+    jobTitle: "Analyst",
+    address: "3 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 8,
+    name: "Mary Cooper",
+    age: 31,
+    jobTitle: "Developer",
+    address: "8 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 9,
+    name: "Alice Cole",
+    age: 38,
+    jobTitle: "Team Lead",
+    address: "10 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 10,
+    name: "Ben Fields",
+    age: 40,
+    jobTitle: "Team Lead",
+    address: "14 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 11,
+    name: "Pete Norton",
+    age: 32,
+    jobTitle: "Analyst",
+    address: "6 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 12,
+    name: "Ashley Langford",
+    age: 29,
+    jobTitle: "Developer",
+    address: "7 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 13,
+    name: "Michael Hall",
+    age: 35,
+    jobTitle: "Team Lead",
+    address: "5 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 14,
+    name: "David Frank",
+    age: 28,
+    jobTitle: "Developer",
+    address: "3 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 15,
+    name: "Mary Lincoln",
+    age: 23,
+    jobTitle: "Developer",
+    address: "10 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 16,
+    name: "Will Barns",
+    age: 36,
+    jobTitle: "Analyst",
+    address: "1 New Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 17,
+    name: "Elizabeth Long",
+    age: 43,
+    jobTitle: "Analyst",
+    address: "9 Short Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 18,
+    name: "Keith Jones",
+    age: 37,
+    jobTitle: "Developer",
+    address: "11 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 19,
+    name: "Olivia Brown",
+    age: 19,
+    jobTitle: "Trainee Analyst",
+    address: "4 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 20,
+    name: "Tim Green",
+    age: 50,
+    jobTitle: "Developer",
+    address: "2 Long Street, Town, Country, Postcode",
+  },
+];
+
+export const paginationOptions = {
+  itemsPerPage: [
+    { label: "5", value: "5" },
+    { label: "10", value: "10" },
+    { label: "15", value: "15" },
+  ],
+  itemsPerPageControl: true,
+  goToPageControl: true,
+};
 
 <Canvas>
   <Story name="Pagination">
-      <IcDataTable
-        caption="table with pagination"
-        showPagination="true"
-        columns={paginationColumns}
-        data={paginationData}
-        paginationOptions={paginationOptions}
-      ></IcDataTable>
+    <IcUnstableDataTable
+      caption="table with pagination"
+      showPagination="true"
+      columns={paginationColumns}
+      data={paginationData}
+      paginationOptions={paginationOptions}
+    ></IcUnstableDataTable>
   </Story>
 </Canvas>
 
 ### Complex example
 
 export const complexColumns = [
-          {
-            key: "employeeNumber",
-            title: "Employee number",
-            dataType: "number",
-            columnAlignment: { horizontal: "left" },
-          },
-          {
-            key: "name",
-            title: "Name",
-            dataType: "string",
-          },
-          {
-            key: "age",
-            title: "Age",
-            dataType: "number",
-          },
-          {
-            key: "jobTitle",
-            title: "Job title",
-            dataType: "string",
-          },
-          {
-            key: "address",
-            title: "Address",
-            dataType: "address",
-          },
-        ];
-        
-        export const complexData = [
-          {
-            employeeNumber: 1,
-            name: "Joe Bloggs",
-            age: 30,
-            jobTitle: "Developer",
-            address: "1 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 2,
-            name: "Sarah Jones",
-            age: 28,
-            jobTitle: "Developer",
-            address: "2 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 3,
-            name: "Mark Owens",
-            age: 45,
-            jobTitle: "Team Lead",
-            address: "12 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 4,
-            name: "Naomi Thomas",
-            age: 32,
-            jobTitle: "Developer",
-            address: "8 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 5,
-            name: "Luke Ashford",
-            age: 18,
-            jobTitle: "Junior Developer",
-            address: "5 New Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 6,
-            name: "Dave Smith",
-            age: 33,
-            jobTitle: "Analyst",
-            address: "4 Extra Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 7,
-            name: "Amy Fox",
-            age: 27,
-            jobTitle: "Analyst",
-            address: "3 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 8,
-            name: "Mary Cooper",
-            age: 31,
-            jobTitle: "Developer",
-            address: "8 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 9,
-            name: "Alice Cole",
-            age: 38,
-            jobTitle: "Team Lead",
-            address: "10 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 10,
-            name: "Ben Fields",
-            age: 40,
-            jobTitle: "Team Lead",
-            address: "14 High Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 11,
-            name: "Pete Norton",
-            age: 32,
-            jobTitle: "Analyst",
-            address: "6 Key Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 12,
-            name: "Ashley Langford",
-            age: 29,
-            jobTitle: "Developer",
-            address: "7 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 13,
-            name: "Michael Hall",
-            age: 35,
-            jobTitle: "Team Lead",
-            address: "5 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 14,
-            name: "David Frank",
-            age: 28,
-            jobTitle: "Developer",
-            address: "3 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 15,
-            name: "Mary Lincoln",
-            age: 23,
-            jobTitle: "Developer",
-            address: "10 Main Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 16,
-            name: "Will Barns",
-            age: 36,
-            jobTitle: "Analyst",
-            address: "1 New Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 17,
-            name: "Elizabeth Long",
-            age: 43,
-            jobTitle: "Analyst",
-            address: "9 Short Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 18,
-            name: "Keith Jones",
-            age: 37,
-            jobTitle: "Developer",
-            address: "11 Main Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 19,
-            name: "Olivia Brown",
-            age: 19,
-            jobTitle: "Trainee Analyst",
-            address: "4 Side Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 20,
-            name: "Tim Green",
-            age: 50,
-            jobTitle: "Developer",
-            address: "2 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 21,
-            name: "Christopher Stafford",
-            age: 21,
-            jobTitle: "Developer",
-            address: "1 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 22,
-            name: "Susan Kahn",
-            age: 23,
-            jobTitle: "Analyst",
-            address: "3 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 23,
-            name: "Nicolas Meadows",
-            age: 39,
-            jobTitle: "Analyst",
-            address: "4 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 24,
-            name: "Victoria George",
-            age: 45,
-            jobTitle: "Developer",
-            address: "6 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 25,
-            name: "Calvin Leon",
-            age: 49,
-            jobTitle: "Team Lead",
-            address: "8 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 26,
-            name: "Jayden Shepherd",
-            age: 48,
-            jobTitle: "Analyst",
-            address: "9 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 27,
-            name: "Judith Larson",
-            age: 25,
-            jobTitle: "Developer",
-            address: "10 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 28,
-            name: "Patrick Kemp",
-            age: 30,
-            jobTitle: "Developer",
-            address: "11 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 29,
-            name: "Reagan Keller",
-            age: 28,
-            jobTitle: "Developer",
-            address: "12 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 30,
-            name: "Lily Omar",
-            age: 40,
-            jobTitle: "Team Lead",
-            address: "13 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 31,
-            name: "Gabrielle Cooper",
-            age: 27,
-            jobTitle: "Analyst",
-            address: "14 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 32,
-            name: "Hugh Stewart",
-            age: 29,
-            jobTitle: "Developer",
-            address: "15 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 33,
-            name: "Cole Henson",
-            age: 39,
-            jobTitle: "Analyst",
-            address: "16 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 34,
-            name: "Amanda O'Neill",
-            age: 42,
-            jobTitle: "Team Lead",
-            address: "17 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 35,
-            name: "Dustin Steele",
-            age: 31,
-            jobTitle: "Developer",
-            address: "18 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 36,
-            name: "Arabella Cross",
-            age: 41,
-            jobTitle: "Developer",
-            address: "19 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 37,
-            name: "Krish Greene",
-            age: 23,
-            jobTitle: "Developer",
-            address: "20 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 38,
-            name: "Jerome Barr",
-            age: 25,
-            jobTitle: "Analyst",
-            address: "21 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 39,
-            name: "Jacob Shepherd",
-            age: 32,
-            jobTitle: "Analyst",
-            address: "22 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 40,
-            name: "Liam Noon",
-            age: 32,
-            jobTitle: "Developer",
-            address: "23 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 41,
-            name: "Ralph Powers",
-            age: 38,
-            jobTitle: "Developer",
-            address: "24 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 42,
-            name: "Lacey Proctor",
-            age: 44,
-            jobTitle: "Developer",
-            address: "25 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 43,
-            name: "Dustin Ware",
-            age: 29,
-            jobTitle: "Developer",
-            address: "26 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 44,
-            name: "Brett Conway",
-            age: 33,
-            jobTitle: "Analyst",
-            address: "27 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 45,
-            name: "Pamela Cabrera",
-            age: 43,
-            jobTitle: "Developer",
-            address: "28 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 46,
-            name: "Rory Matthews",
-            age: 37,
-            jobTitle: "Developer",
-            address: "29 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 47,
-            name: "Lucille Walker",
-            age: 46,
-            jobTitle: "Team Lead",
-            address: "30 Long Street, Town, Country, Postcode",
-          },
-          {
-            employeeNumber: 48,
-            name: "Finley Kirk",
-            age: 28,
-            jobTitle: "Developer",
-            address: "31 Long Street, Town, County, Postcode",
-          },
-          {
-            employeeNumber: 49,
-            name: "Micaela Kim",
-            age: 22,
-            jobTitle: "Analyst",
-            address: "32 Long Street, Town, Country, Postcode",
-          },
-        ];
+  {
+    key: "employeeNumber",
+    title: "Employee number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+
+export const complexData = [
+  {
+    employeeNumber: 1,
+    name: "Joe Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 2,
+    name: "Sarah Jones",
+    age: 28,
+    jobTitle: "Developer",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 3,
+    name: "Mark Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 4,
+    name: "Naomi Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 5,
+    name: "Luke Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 6,
+    name: "Dave Smith",
+    age: 33,
+    jobTitle: "Analyst",
+    address: "4 Extra Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 7,
+    name: "Amy Fox",
+    age: 27,
+    jobTitle: "Analyst",
+    address: "3 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 8,
+    name: "Mary Cooper",
+    age: 31,
+    jobTitle: "Developer",
+    address: "8 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 9,
+    name: "Alice Cole",
+    age: 38,
+    jobTitle: "Team Lead",
+    address: "10 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 10,
+    name: "Ben Fields",
+    age: 40,
+    jobTitle: "Team Lead",
+    address: "14 High Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 11,
+    name: "Pete Norton",
+    age: 32,
+    jobTitle: "Analyst",
+    address: "6 Key Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 12,
+    name: "Ashley Langford",
+    age: 29,
+    jobTitle: "Developer",
+    address: "7 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 13,
+    name: "Michael Hall",
+    age: 35,
+    jobTitle: "Team Lead",
+    address: "5 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 14,
+    name: "David Frank",
+    age: 28,
+    jobTitle: "Developer",
+    address: "3 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 15,
+    name: "Mary Lincoln",
+    age: 23,
+    jobTitle: "Developer",
+    address: "10 Main Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 16,
+    name: "Will Barns",
+    age: 36,
+    jobTitle: "Analyst",
+    address: "1 New Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 17,
+    name: "Elizabeth Long",
+    age: 43,
+    jobTitle: "Analyst",
+    address: "9 Short Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 18,
+    name: "Keith Jones",
+    age: 37,
+    jobTitle: "Developer",
+    address: "11 Main Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 19,
+    name: "Olivia Brown",
+    age: 19,
+    jobTitle: "Trainee Analyst",
+    address: "4 Side Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 20,
+    name: "Tim Green",
+    age: 50,
+    jobTitle: "Developer",
+    address: "2 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 21,
+    name: "Christopher Stafford",
+    age: 21,
+    jobTitle: "Developer",
+    address: "1 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 22,
+    name: "Susan Kahn",
+    age: 23,
+    jobTitle: "Analyst",
+    address: "3 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 23,
+    name: "Nicolas Meadows",
+    age: 39,
+    jobTitle: "Analyst",
+    address: "4 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 24,
+    name: "Victoria George",
+    age: 45,
+    jobTitle: "Developer",
+    address: "6 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 25,
+    name: "Calvin Leon",
+    age: 49,
+    jobTitle: "Team Lead",
+    address: "8 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 26,
+    name: "Jayden Shepherd",
+    age: 48,
+    jobTitle: "Analyst",
+    address: "9 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 27,
+    name: "Judith Larson",
+    age: 25,
+    jobTitle: "Developer",
+    address: "10 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 28,
+    name: "Patrick Kemp",
+    age: 30,
+    jobTitle: "Developer",
+    address: "11 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 29,
+    name: "Reagan Keller",
+    age: 28,
+    jobTitle: "Developer",
+    address: "12 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 30,
+    name: "Lily Omar",
+    age: 40,
+    jobTitle: "Team Lead",
+    address: "13 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 31,
+    name: "Gabrielle Cooper",
+    age: 27,
+    jobTitle: "Analyst",
+    address: "14 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 32,
+    name: "Hugh Stewart",
+    age: 29,
+    jobTitle: "Developer",
+    address: "15 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 33,
+    name: "Cole Henson",
+    age: 39,
+    jobTitle: "Analyst",
+    address: "16 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 34,
+    name: "Amanda O'Neill",
+    age: 42,
+    jobTitle: "Team Lead",
+    address: "17 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 35,
+    name: "Dustin Steele",
+    age: 31,
+    jobTitle: "Developer",
+    address: "18 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 36,
+    name: "Arabella Cross",
+    age: 41,
+    jobTitle: "Developer",
+    address: "19 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 37,
+    name: "Krish Greene",
+    age: 23,
+    jobTitle: "Developer",
+    address: "20 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 38,
+    name: "Jerome Barr",
+    age: 25,
+    jobTitle: "Analyst",
+    address: "21 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 39,
+    name: "Jacob Shepherd",
+    age: 32,
+    jobTitle: "Analyst",
+    address: "22 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 40,
+    name: "Liam Noon",
+    age: 32,
+    jobTitle: "Developer",
+    address: "23 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 41,
+    name: "Ralph Powers",
+    age: 38,
+    jobTitle: "Developer",
+    address: "24 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 42,
+    name: "Lacey Proctor",
+    age: 44,
+    jobTitle: "Developer",
+    address: "25 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 43,
+    name: "Dustin Ware",
+    age: 29,
+    jobTitle: "Developer",
+    address: "26 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 44,
+    name: "Brett Conway",
+    age: 33,
+    jobTitle: "Analyst",
+    address: "27 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 45,
+    name: "Pamela Cabrera",
+    age: 43,
+    jobTitle: "Developer",
+    address: "28 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 46,
+    name: "Rory Matthews",
+    age: 37,
+    jobTitle: "Developer",
+    address: "29 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 47,
+    name: "Lucille Walker",
+    age: 46,
+    jobTitle: "Team Lead",
+    address: "30 Long Street, Town, Country, Postcode",
+  },
+  {
+    employeeNumber: 48,
+    name: "Finley Kirk",
+    age: 28,
+    jobTitle: "Developer",
+    address: "31 Long Street, Town, County, Postcode",
+  },
+  {
+    employeeNumber: 49,
+    name: "Micaela Kim",
+    age: 22,
+    jobTitle: "Analyst",
+    address: "32 Long Street, Town, Country, Postcode",
+  },
+];
 
 <Canvas>
   <Story name="Complex example">
-      <IcDataTable
-        caption="complex example table"
-        embedded="true"
-        style={{height: "366px"}}
-        showPagination="true"
-        sortable="true"
-        columns={complexColumns}
-        data={complexData}
-      ></IcDataTable>
-      <div style={{display: "flex", paddingTop: "10px", gap: "8px"}}>
-        <IcButton onClick={() => toggleStickyHeader(true)}>Stick header</IcButton>
-        <IcButton onClick={() => toggleStickyHeader(false)}>Unstick header</IcButton>
-      </div>
+    <IcUnstableDataTable
+      caption="complex example table"
+      embedded="true"
+      style={{ height: "366px" }}
+      showPagination="true"
+      sortable="true"
+      columns={complexColumns}
+      data={complexData}
+    ></IcUnstableDataTable>
+    <div style={{ display: "flex", paddingTop: "10px", gap: "8px" }}>
+      <IcButton onClick={() => toggleStickyHeader(true)}>Stick header</IcButton>
+      <IcButton onClick={() => toggleStickyHeader(false)}>
+        Unstick header
+      </IcButton>
+    </div>
   </Story>
 </Canvas>
 
@@ -1754,8 +1799,14 @@ export const complexColumns = [
 export const AsyncExample = () => {
   const [data, setData] = useState();
   setTimeout(() => setData(basicData), 5000);
-  return <IcDataTable caption="async table" columns={basicColumns} data={data}></IcDataTable>
-}
+  return (
+    <IcUnstableDataTable
+      caption="async table"
+      columns={basicColumns}
+      data={data}
+    ></IcUnstableDataTable>
+  );
+};
 
 <Canvas>
   <Story name="Async data loading">
