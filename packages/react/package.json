@@ -15,6 +15,9 @@
     "copy:core-css": "echo 'Copy core.css from: @ukic/canary-web-components' && mkdirp -p ./dist/core && ncp ../web-components/dist/core/core.css ./dist/core/core.css",
     "copy:normalize-css": "echo 'Copy normalize.css from: @ukic/canary-web-components' && ncp ../web-components/dist/core/normalize.css ./dist/core/normalize.css"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
