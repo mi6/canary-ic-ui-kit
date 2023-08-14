@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ic-data-table should render 1`] = `
+exports[`ic-unstable-data-table should render 1`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -174,7 +174,7 @@ exports[`ic-data-table should render 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render embedded 1`] = `
+exports[`ic-unstable-data-table should render embedded 1`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -348,7 +348,7 @@ exports[`ic-data-table should render embedded 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render sortable 1`] = `
+exports[`ic-unstable-data-table should render sortable 1`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -545,7 +545,7 @@ exports[`ic-data-table should render sortable 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render with cell overrides 1`] = `
+exports[`ic-unstable-data-table should render with cell overrides 1`] = `
 <ic-unstable-data-table show-pagination="">
   <mock:shadow-root>
     <div class="table-container">
@@ -722,7 +722,7 @@ exports[`ic-data-table should render with cell overrides 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render with column overrides 1`] = `
+exports[`ic-unstable-data-table should render with column overrides 1`] = `
 <ic-unstable-data-table show-pagination="">
   <mock:shadow-root>
     <div class="table-container">
@@ -899,7 +899,7 @@ exports[`ic-data-table should render with column overrides 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render with pagination 1`] = `
+exports[`ic-unstable-data-table should render with pagination 1`] = `
 <ic-unstable-data-table show-pagination="">
   <mock:shadow-root>
     <div class="table-container">
@@ -1164,7 +1164,7 @@ exports[`ic-data-table should render with pagination 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render with row headers 1`] = `
+exports[`ic-unstable-data-table should render with row headers 1`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -1326,7 +1326,7 @@ exports[`ic-data-table should render with row headers 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should render with row overrides 1`] = `
+exports[`ic-unstable-data-table should render with row overrides 1`] = `
 <ic-unstable-data-table show-pagination="">
   <mock:shadow-root>
     <div class="table-container">
@@ -1491,7 +1491,7 @@ exports[`ic-data-table should render with row overrides 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should sort data when the sort button is clicked 1`] = `
+exports[`ic-unstable-data-table should sort data when the sort button is clicked 1`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -1716,7 +1716,7 @@ exports[`ic-data-table should sort data when the sort button is clicked 1`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should sort data when the sort button is clicked 2`] = `
+exports[`ic-unstable-data-table should sort data when the sort button is clicked 2`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -1941,7 +1941,7 @@ exports[`ic-data-table should sort data when the sort button is clicked 2`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should sort data when the sort button is clicked 3`] = `
+exports[`ic-unstable-data-table should sort data when the sort button is clicked 3`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
@@ -2166,7 +2166,7 @@ exports[`ic-data-table should sort data when the sort button is clicked 3`] = `
 </ic-unstable-data-table>
 `;
 
-exports[`ic-data-table should sort data when the sort button is clicked 4`] = `
+exports[`ic-unstable-data-table should sort data when the sort button is clicked 4`] = `
 <ic-unstable-data-table>
   <mock:shadow-root>
     <div class="table-container">
