@@ -1,6 +1,6 @@
 {
   "packages": ["packages/*"],
-  "version": "2.1.0-canary",
+  "version": "2.0.0-canary",
   "command": {
     "publish": {
       "registry": "https://registry.npmjs.org"
@@ -9,7 +9,7 @@
       "conventionalCommits": true,
       "conventionalPrerelease": true,
       "preid": "canary",
-      
+
       "message": "chore(release): [ci skip] canary components publish"
     }
   }
