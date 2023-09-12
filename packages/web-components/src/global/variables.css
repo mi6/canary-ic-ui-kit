@@ -21,7 +21,6 @@
 
   /* borders */
   --ic-border-disabled: var(--ic-space-1px) dashed var(--ic-architectural-200);
-  --ic-border-light: var(--ic-space-1px) solid var(--ic-architectural-200);
   --ic-border-default: var(--ic-space-1px) solid var(--ic-architectural-400);
   --ic-border-hover: var(--ic-space-1px) solid var(--ic-architectural-500);
   --ic-border-pressed: var(--ic-space-1px) solid var(--ic-architectural-600);
@@ -361,9 +360,6 @@
   --ic-focus-glow: #80a1e8;
   --ic-hc-focus-outline: 3px solid transparent;
 
-  /* data tables */
-  --ic-table-row-selected: #c7d7ef;
-
   /* breakpoints */
 
   /* Note: ensure to update in ic-section-container media queries */
@@ -388,7 +384,7 @@
   --ic-z-index-base-value: 0;
   --ic-z-index-page-header: calc(var(--ic-z-index-base-value) + 10);
   --ic-z-index-back-to-top: calc(var(--ic-z-index-base-value) + 20);
-  --ic-z-index-menu: calc(var(--ic-z-index-base-value) + 50);
+  --ic-z-index-menu: calc(var(--ic-z-index-base-value) + 70);
   --ic-z-index-popover: calc(var(--ic-z-index-base-value) + 50);
   --ic-z-index-navigation-item: calc(var(--ic-z-index-base-value) + 50);
   --ic-z-index-navigation-menu: calc(var(--ic-z-index-base-value) + 60);

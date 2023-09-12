@@ -804,6 +804,10 @@ export namespace Components {
          */
         "inputLabel": string;
         /**
+          * The custom name for the label field for IcMenuOption.
+         */
+        "labelField": string;
+        /**
           * The ID of the menu.
          */
         "menuId": string;
@@ -828,6 +832,10 @@ export namespace Components {
           * The value of the currently selected option.
          */
         "value": string;
+        /**
+          * The custom name for the value field for IcMenuOption.
+         */
+        "valueField": string;
     }
     interface IcMenuGroup {
         /**
@@ -1308,6 +1316,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The custom name for the label field to correspond with the IcMenuOption type.
+         */
+        "labelField"?: string;
+        /**
           * Trigger loading state when fetching options asyncronously
          */
         "loading"?: boolean;
@@ -1363,6 +1375,10 @@ export namespace Components {
           * The value of the search input.
          */
         "value": string;
+        /**
+          * The custom name for the value field to correspond with the IcMenuOption type.
+         */
+        "valueField"?: string;
     }
     interface IcSectionContainer {
         /**
@@ -1942,7 +1958,7 @@ export namespace Components {
          */
         "applyVerticalMargins"?: boolean;
         /**
-          * If `true`, the typography will have a bold font weight. Note: This will only take affect on h3, body and code-large variants.
+          * If `true`, the typography will have a bold font weight. Note: This will have no impact on variants that already use an equivalent or higher font weight (h1, h2, and subtitle-large).
          */
         "bold"?: boolean;
         /**
@@ -3308,6 +3324,10 @@ declare namespace LocalJSX {
          */
         "inputLabel": string;
         /**
+          * The custom name for the label field for IcMenuOption.
+         */
+        "labelField"?: string;
+        /**
           * The ID of the menu.
          */
         "menuId": string;
@@ -3340,6 +3360,10 @@ declare namespace LocalJSX {
           * The value of the currently selected option.
          */
         "value": string;
+        /**
+          * The custom name for the value field for IcMenuOption.
+         */
+        "valueField"?: string;
     }
     interface IcMenuGroup {
         /**
@@ -3836,6 +3860,10 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
+          * The custom name for the label field to correspond with the IcMenuOption type.
+         */
+        "labelField"?: string;
+        /**
           * Trigger loading state when fetching options asyncronously
          */
         "loading"?: boolean;
@@ -3933,6 +3961,10 @@ declare namespace LocalJSX {
           * The value of the search input.
          */
         "value"?: string;
+        /**
+          * The custom name for the value field to correspond with the IcMenuOption type.
+         */
+        "valueField"?: string;
     }
     interface IcSectionContainer {
         /**
@@ -4562,7 +4594,7 @@ declare namespace LocalJSX {
          */
         "applyVerticalMargins"?: boolean;
         /**
-          * If `true`, the typography will have a bold font weight. Note: This will only take affect on h3, body and code-large variants.
+          * If `true`, the typography will have a bold font weight. Note: This will have no impact on variants that already use an equivalent or higher font weight (h1, h2, and subtitle-large).
          */
         "bold"?: boolean;
         /**

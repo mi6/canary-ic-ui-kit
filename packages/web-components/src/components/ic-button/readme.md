@@ -53,9 +53,11 @@ Type: `Promise<void>`
 
 ## Slots
 
-| Slot     | Description                                             |
-| -------- | ------------------------------------------------------- |
-| `"icon"` | Content will be placed to the left of the button label. |
+| Slot           | Description                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| `"icon"`       | Deprecated. This slot should not be used anymore. Use left-icon or right-icon slot instead. |
+| `"left-icon"`  | Content will be placed to the left of the button label.                                     |
+| `"right-icon"` | Content will be placed to the right of the button label.                                    |
 
 
 ## CSS Custom Properties
@@ -72,7 +74,6 @@ Type: `Promise<void>`
 
  - [ic-alert](../ic-alert)
  - [ic-card](../ic-card)
- - [ic-data-table](../ic-data-table)
  - [ic-dialog](../ic-dialog)
  - [ic-horizontal-scroll](../ic-horizontal-scroll)
  - [ic-menu](../ic-menu)
@@ -80,7 +81,6 @@ Type: `Promise<void>`
  - [ic-navigation-button](../ic-navigation-button)
  - [ic-navigation-menu](../ic-navigation-menu)
  - [ic-pagination](../ic-pagination)
- - [ic-pagination-bar](../ic-pagination-bar)
  - [ic-search-bar](../ic-search-bar)
  - [ic-select](../ic-select)
  - [ic-side-navigation](../ic-side-navigation)
@@ -101,7 +101,6 @@ graph TD;
   ic-tooltip --> ic-typography
   ic-alert --> ic-button
   ic-card --> ic-button
-  ic-data-table --> ic-button
   ic-dialog --> ic-button
   ic-horizontal-scroll --> ic-button
   ic-menu --> ic-button
@@ -109,7 +108,6 @@ graph TD;
   ic-navigation-button --> ic-button
   ic-navigation-menu --> ic-button
   ic-pagination --> ic-button
-  ic-pagination-bar --> ic-button
   ic-search-bar --> ic-button
   ic-select --> ic-button
   ic-side-navigation --> ic-button
