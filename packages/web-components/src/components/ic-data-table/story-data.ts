@@ -493,18 +493,18 @@ export const createDataTableElement = (
   caption: string,
   columns: IcDataTableColumnObject[] = COLS,
   data: object[] = DATA
-): HTMLIcDataTableElement => {
-  const dataTable = document.createElement("ic-data-table");
+): HTMLIcUnstableDataTableElement => {
+  const dataTable = document.createElement("ic-unstable-data-table");
   dataTable.setAttribute("caption", caption);
   dataTable.columns = columns;
   dataTable.data = data;
   return dataTable;
 };
 
-export const Basic = (): HTMLIcDataTableElement =>
+export const Basic = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement("Basic Table");
 
-export const Embedded = (): HTMLIcDataTableElement => {
+export const Embedded = (): HTMLIcUnstableDataTableElement => {
   const dataTable = createDataTableElement("Embedded Table");
   dataTable.setAttribute("embedded", "true");
   return dataTable;
@@ -555,16 +555,16 @@ export const Scrollable = (): HTMLElement => {
   return wrapper;
 };
 
-export const RowHeaders = (): HTMLIcDataTableElement =>
+export const RowHeaders = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement("Row Header Table", ROW_HEADER_COLS, ROW_HEADER_DATA);
 
-export const Sort = (): HTMLIcDataTableElement => {
+export const Sort = (): HTMLIcUnstableDataTableElement => {
   const dataTable = createDataTableElement("Sort", COLS, DATA);
   dataTable.setAttribute("sortable", "true");
   return dataTable;
 };
 
-export const SortOptions = (): HTMLIcDataTableElement => {
+export const SortOptions = (): HTMLIcUnstableDataTableElement => {
   const dataTable = createDataTableElement("Sort Order", COLS, DATA);
   dataTable.setAttribute("sortable", "true");
   dataTable.sortOptions = {
@@ -574,7 +574,7 @@ export const SortOptions = (): HTMLIcDataTableElement => {
   return dataTable;
 };
 
-export const Pagination = (): HTMLIcDataTableElement => {
+export const Pagination = (): HTMLIcUnstableDataTableElement => {
   const dataTable = createDataTableElement("Pagination", LONG_COLS, LONG_DATA);
   dataTable.setAttribute("show-pagination", "true");
   dataTable.paginationOptions = {
@@ -589,16 +589,16 @@ export const Pagination = (): HTMLIcDataTableElement => {
   return dataTable;
 };
 
-export const ColumnOverrides = (): HTMLIcDataTableElement =>
+export const ColumnOverrides = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement("Column Overides", COLS_ALIGNMENT, DATA);
 
-export const RowOverrides = (): HTMLIcDataTableElement =>
+export const RowOverrides = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement("Row Overides", ROW_HEADER_COLS, ROW_ALIGNMENT);
 
-export const CellOverrides = (): HTMLIcDataTableElement =>
+export const CellOverrides = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement("Cell Overides", COLS, DATA_CELL_ALIGNMENT);
 
-export const LinksHTMLElements = (): HTMLIcDataTableElement =>
+export const LinksHTMLElements = (): HTMLIcUnstableDataTableElement =>
   createDataTableElement(
     "Links and HTML Elements Overides",
     COLS_ELEMENTS,

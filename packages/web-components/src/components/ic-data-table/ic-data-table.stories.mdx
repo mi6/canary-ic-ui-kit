@@ -26,7 +26,7 @@ import readme from "./readme.md";
 
 <Meta
   title="Web Components/Data Table"
-  component="ic-data-table"
+  component="ic-unstable-data-table"
   parameters={{
     componentAPI: {
       data: readme,
@@ -41,7 +41,7 @@ Use the data table component to display data in a tabular form.
 There are two required props for data table:
 
 - Caption: `string`
-- Columns: `IcDataTableColumnObject[]`
+- Columns: `IcUnstableDataTableColumnObject[]`
 
 Click the 'Component API' tab to view all the available props, events and slots for Data Tables.
 
@@ -58,7 +58,10 @@ A basic example with no functionality.
 #### Basic code example
 
 ```html
-<ic-data-table id="data-table" caption="Basic Table"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Basic Table"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   const columns = [
@@ -142,11 +145,11 @@ The `embedded` boolean adds a border around the table so it can be added as a st
 #### Embedded code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   id="data-table"
   caption="Embedded Table"
   embedded="true"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -191,11 +194,11 @@ The `density` variant provides three different styles for the data table.
 #### Dense code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   id="data-table"
   caption="Dense Table"
   density="dense"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -232,11 +235,11 @@ The `density` variant provides three different styles for the data table.
 #### Spacious code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   id="data-table"
   caption="Spacious Table"
   density="spacious"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -276,12 +279,12 @@ This can be mitigated by using the `sticky-column-headers` prop which takes a bo
 #### Sticky column headers code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   style="height: 150px"
   id="data-table"
   caption="Sticky header Table"
   sticky-column-headers="true"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -321,7 +324,10 @@ The data array includes an additional `header` key which takes an object. The ti
 #### Row headers code example
 
 ```html
-<ic-data-table id="data-table" caption="Row headers"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Row headers"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -367,7 +373,11 @@ Set `sortable` to `true` to set the sort functionality on all columns. Sorting c
 #### Sort code example
 
 ```html
-<ic-data-table id="data-table" caption="Sort" sortable="true"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Sort"
+  sortable="true"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -406,11 +416,11 @@ It is possible to change the sort options for the sort buttons. The `sortOptions
 #### Sort options code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   id="data-table"
   caption="Sort Options"
   sortable="true"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -457,11 +467,11 @@ Pagination allows large data sets to be split into pages in order to make the da
 #### Pagination code example
 
 ```html
-<ic-data-table
+<ic-unstable-data-table
   id="data-table"
   caption="Pagination"
   show-pagination="true"
-></ic-data-table>
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
   // Copy columns array for 'basic' example
@@ -514,7 +524,10 @@ There may be a requirement to style a column differently to the rest of the data
 #### Column overrides code example
 
 ```html
-<ic-data-table id="data-table" caption="Column Overrides"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Column Overrides"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
 
@@ -558,7 +571,10 @@ Row overrides allow styling to be applied at a row level and is set within the `
 #### Row overrides code example
 
 ```html
-<ic-data-table id="data-table" caption="Row Overrides"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Row Overrides"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
 
@@ -613,7 +629,10 @@ Cell overrides allows styling to be applied at a cell level. The cell which requ
 #### Cell overrides code example
 
 ```html
-<ic-data-table id="data-table" caption="Cell Overrides"></ic-data-table>
+<ic-unstable-data-table
+  id="data-table"
+  caption="Cell Overrides"
+></ic-unstable-data-table>
 <script>
   const dataTable = document.querySelector("#data-table");
 
