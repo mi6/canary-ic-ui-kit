@@ -43,9 +43,9 @@ There are two required props for data table:
 - Caption: `string`
 - Columns: `IcUnstableDataTableColumnObject[]`
 
-Click the 'Component API' tab to view all the available props, events and slots for Data Tables.
+Click the 'Component API' tab to view all the available props, events and slots for data tables.
 
-To import the data table web component into your application, import `@ukic/canary-web-components` into your application.
+To use the data table component, import `@ukic/canary-web-components` into your application.
 
 ### Basic
 
@@ -515,7 +515,7 @@ There may be a requirement to style a column differently to the rest of the data
 - `horizontal` accepts `left`, `right` or `center`.
 - `vertical` accepts `top`, `middle`, `bottom`.
 
-`emphasis` can be added to the column by setting `high` or `low`
+`emphasis` can be added to the column by setting `high` or `low`.
 
 <Canvas withSource="none">
   <Story name="Column Overrides">{ColumnOverrides()}</Story>
@@ -559,7 +559,7 @@ There may be a requirement to style a column differently to the rest of the data
 
 ### Row overrides
 
-Row overrides allow styling to be applied at a row level and is set within the `header` object. The row overrides are used inconjunction with row headers. The following row overrides options apply:
+Row overrides allow styling to be applied at a row level and is set within the `header` object. The row overrides are used in conjunction with row headers. The following row overrides options apply:
 
 - `rowAlignment` accepts `left`, `right` and `center`.
 - `emphasis` accepts `high` or `low`.
