@@ -180,6 +180,10 @@ export class Button {
     }
   }
 
+  componentWillUpdate(): void {
+    this.loadingWidth();
+  }
+
   componentWillLoad(): void {
     this.inheritedAttributes = inheritAttributes(this.el, [
       ...IC_INHERITED_ARIA,
@@ -221,6 +225,10 @@ export class Button {
         subtree: true,
       });
     }
+  }
+
+  componentWillRender(): void {
+    this.setViewBox()?.setAttribute("viewBox", "0 0 24 24");
   }
 
   @Listen("click", { capture: true })
@@ -274,6 +282,18 @@ export class Button {
     return iconEl !== null;
   }
 
+  private setViewBox = () => {
+    let iconEl;
+    if (this.hasLeftIconSlot()) {
+      iconEl = this.el.querySelector(`[slot="left-icon"]`);
+    } else if (this.hasRightIconSlot()) {
+      iconEl = this.el.querySelector(`[slot="right-icon"]`);
+    } else {
+      iconEl = null;
+    }
+    return iconEl;
+  };
+
   private handleHiddenFormButtonClick(form: HTMLFormElement): void {
     const hiddenFormButton = document.createElement("button");
 
@@ -310,6 +330,15 @@ export class Button {
       this.appearance = foregroundColor;
     }
   }
+
+  private loadingWidth = () => {
+    if (this.loading) {
+      this.el.style.setProperty(
+        "--min-width",
+        `${this.el.getBoundingClientRect().width}px`
+      );
+    }
+  };
 
   // triggered when text content of sibling element in light DOM changes
   private mutationCallback = (): void => {
@@ -425,11 +454,6 @@ export class Button {
           [`button-variant-${this.variant}`]: true,
           [`button-size-${this.size}`]: true,
           ["loading"]: this.loading,
-          ["loading-with-icon"]:
-            this.loading &&
-            (this.hasIconSlot() ||
-              this.hasLeftIconSlot() ||
-              this.hasRightIconSlot()),
           ["dark"]: this.appearance === IcThemeForegroundEnum.Dark,
           ["light"]: this.appearance === IcThemeForegroundEnum.Light,
           ["full-width"]: this.fullWidth,
