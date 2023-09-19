@@ -36,6 +36,7 @@ export class Tooltip {
     !this.disableHover && "focusin",
     !this.disableClick && "click",
   ];
+
   private toolTip: HTMLDivElement;
 
   @Element() el: HTMLIcTooltipElement;
@@ -46,7 +47,7 @@ export class Tooltip {
   @Prop() disableClick?: boolean = false;
 
   /**
-   * If `true`, the tooltip will not be displayed on hover, it will require a click or using the display method.
+   * If `true`, the tooltip will not be displayed on hover, it will require a click.
    */
   @Prop() disableHover?: boolean = false;
 
