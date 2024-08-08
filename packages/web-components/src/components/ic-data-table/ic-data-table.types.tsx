@@ -23,4 +23,5 @@ export type IcDataTableColumnObject = {
   cellAlignment?: string;
   emphasis?: string;
   colspan?: number;
+  width?: number;
 };

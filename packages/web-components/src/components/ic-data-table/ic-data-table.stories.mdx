@@ -87,6 +87,85 @@ import readme from "./readme.md";
   </Story>
 </Canvas>
 
+
+### Custom column widths
+
+<Canvas>
+  <Story name="Custom column widths">
+    {html` <script>
+        dataTable = document.querySelector("ic-unstable-data-table");
+        dataTable.columns = [
+          {
+            key: "firstName",
+            title: "First name",
+            dataType: "string",
+          },
+          {
+            key: "lastName",
+            title: "Last name",
+            dataType: "string",
+          },
+          {
+            key: "age",
+            title: "Age",
+            dataType: "number",
+            width: 5,
+          },
+          {
+            key: "jobTitle",
+            title: "Job title",
+            dataType: "string",
+            width: 20,
+          },
+          {
+            key: "address",
+            title: "Address",
+            dataType: "address",
+            width: 40,
+          },
+        ];
+        dataTable.data = [
+          {
+            firstName: "Joe",
+            lastName: "Bloggs",
+            age: 30,
+            jobTitle: "Developer",
+            address: "1 Main Street, Town, County, Postcode",
+          },
+          {
+            firstName: "Sarah",
+            lastName: "Smith",
+            age: 28,
+            jobTitle: "Analyst",
+            address: "2 Main Street, Town, Country, Postcode",
+          },
+          {
+            firstName: "Mark",
+            lastName: "Owens",
+            age: 45,
+            jobTitle: "Team Lead",
+            address: "12 Key Street, Town, Country, Postcode",
+          },
+          {
+            firstName: "Naomi",
+            lastName: "Thomas",
+            age: 32,
+            jobTitle: "Developer",
+            address: "8 Side Street, Town, Country, Postcode",
+          },
+          {
+            firstName: "Luke",
+            lastName: "Ashford",
+            age: 18,
+            jobTitle: "Junior Developer",
+            address: "5 New Street, Town, Country, Postcode",
+          },
+        ];
+      </script>
+      <ic-unstable-data-table caption="basic table"></ic-unstable-data-table>`}
+  </Story>
+</Canvas>
+
 ### Embedded
 
 <Canvas>
@@ -1513,21 +1592,25 @@ import readme from "./readme.md";
             title: "Employee number",
             dataType: "number",
             columnAlignment: { horizontal: "left" },
+            width: 10,
           },
           {
             key: "name",
             title: "Name",
             dataType: "string",
+            width: 15,
           },
           {
             key: "age",
             title: "Age",
             dataType: "number",
+            width: 5,
           },
           {
             key: "jobTitle",
             title: "Job title",
             dataType: "string",
+            width: 20,
           },
           {
             key: "address",

@@ -209,6 +209,12 @@ export class DataTable {
     }
   };
 
+  private getColumnWidth = (index: number) => {
+    const width = this.columns[index]?.width;
+
+    return width ? `${width}%` : null;
+  };
+
   private createCells = (row: object) => {
     const rowValues = Object.values(row);
     const rowKeys = Object.keys(row);
@@ -292,7 +298,7 @@ export class DataTable {
   };
 
   private createColumnHeaders = () => {
-    return this.columns.map(({ cellAlignment, colspan, key, title }) => (
+    return this.columns.map(({ cellAlignment, colspan, key, title }, index) => (
       <th
         scope="col"
         class={{
@@ -301,6 +307,7 @@ export class DataTable {
           [`table-density-${this.density}`]: this.notDefaultDensity(),
         }}
         colSpan={colspan}
+        style={{ width: this.getColumnWidth(index) }}
       >
         {this.sortable ? (
           <div class="column-header-inner-container">

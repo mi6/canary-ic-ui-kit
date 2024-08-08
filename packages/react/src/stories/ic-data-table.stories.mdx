@@ -91,6 +91,50 @@ export const basicData = [
   </Story>
 </Canvas>
 
+
+### Custom column widths
+
+export const customWidthColumns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    width: 5,
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+    width: 20,
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+    width: 40,
+  },
+];
+
+<Canvas>
+  <Story name="Custom column widths">
+    <IcUnstableDataTable
+      caption="custom column widths"
+      columns={customWidthColumns}
+      data={basicData}
+    ></IcUnstableDataTable>
+  </Story>
+</Canvas>
+
 ### Embedded
 
 <Canvas>
@@ -1405,21 +1449,25 @@ export const complexColumns = [
     title: "Employee number",
     dataType: "number",
     columnAlignment: { horizontal: "left" },
+    width: 10,
   },
   {
     key: "name",
     title: "Name",
     dataType: "string",
+    width: 15,
   },
   {
     key: "age",
     title: "Age",
     dataType: "number",
+    width: 5,
   },
   {
     key: "jobTitle",
     title: "Job title",
     dataType: "string",
+    width: 20,
   },
   {
     key: "address",

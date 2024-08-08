@@ -56,6 +56,13 @@ const columnsWithOverrides: IcDataTableColumnObject[] = [
   },
 ];
 
+const columnsWithWidths: IcDataTableColumnObject[] = [
+  { key: "name", title: "Name", dataType: "string", width: 20 },
+  { key: "age", title: "Age", dataType: "number", width: 10 },
+  { key: "department", title: "Department", dataType: "string", width: 40 },
+  { key: "employeeNumber", title: employeeNumber, dataType: "number", width: 30 },
+];
+
 const data = [
   { name: name1, age: 36, department: "Accounts", employeeNumber: 1 },
   {
@@ -402,6 +409,22 @@ describe(icDataTable, () => {
           caption="test table"
           columns={columns}
           data={dataWithCellOverrides}
+          show-pagination
+        ></ic-unstable-data-table>
+      ),
+    });
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it("should render with custom column widths", async () => {
+    const page = await newSpecPage({
+      components: [DataTable],
+      template: () => (
+        <ic-unstable-data-table
+          caption="test table"
+          columns={columnsWithWidths}
+          data={data}
           show-pagination
         ></ic-unstable-data-table>
       ),
